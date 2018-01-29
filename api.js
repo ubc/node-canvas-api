@@ -32,8 +32,10 @@ const getAllPages = (url, result = []) =>
   })
 
 const getAllSubaccounts = accountId => getAllPages(canvasInstance + `/api/v1/accounts/${accountId}/sub_accounts?`)
-const getAllCourses = deptIds => Promise.all(deptIds.map(deptId => getAllPages(canvasInstance + `/api/v1/accounts/${deptId}/courses?`)))
-const getAllStudents = courseIds => Promise.all(courseIds.map(courseId => getAllPages(canvasInstance + `/api/v1/courses/${courseId}/users`)))
+const getAllCourses = deptIds =>
+  Promise.all(deptIds.map(deptId => getAllPages(canvasInstance + `/api/v1/accounts/${deptId}/courses?`)))
+const getAllStudents = courseIds =>
+  Promise.all(courseIds.map(courseId => getAllPages(canvasInstance + `/api/v1/courses/${courseId}/users`)))
 
 limiter.schedule(() => getAllSubaccounts(accountId)
   .then(result => result.map(x => x.id))

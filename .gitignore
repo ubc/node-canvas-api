@@ -63,3 +63,4 @@ typings/
 # Custom
 .idea
 dist
+DS_Store

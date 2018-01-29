@@ -1,0 +1,21 @@
+{
+  "name": "canvas-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "bottleneck": "^2.0.1",
+    "config": "^1.29.2",
+    "dotenv": "^4.0.0",
+    "parse-link-header": "^1.0.1",
+    "ramda": "^0.25.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}

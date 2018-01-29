@@ -22,7 +22,7 @@ const fetchAll = (url, result = []) =>
     return links.next ? fetchAll(links.next.url, result) : result
   })
 
-const buildOptions = (...options) => {
+const buildOptions = (options) => {
   if (options) return options.join('&')
   else return ''
 }
@@ -45,9 +45,9 @@ const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
     .then(dept => getAllCourses([dept.id]))
     .then(courses => R.flatten(courses))
     .then(courses => courses.find(course => course.course_code === courseCode))
-    .then(course => getAllStudents([course.id], 'include[]=email'))
+    .then(course => getAllStudents([course.id], 'include[]=email', 'enrollment_type[]=student'))
     .then(students => R.flatten(students))
-    .then(students => students.map(student => console.log(student.email)))
+    .then(students => console.log(students))
 
 module.exports.getAllSubaccounts = getAllSubaccounts
 module.exports.getAllCourses = getAllCourses

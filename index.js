@@ -11,4 +11,4 @@ const limiter = new Bottleneck({
 })
 
 limiter.schedule(() =>
-  getAllEmailsInCourse(accountId, 'APBI', 'APBI200').then(emails => console.log(emails.length, emails)))
+  getAllEmailsInCourse(accountId, 'APBI', 'APBI200'))

@@ -22,16 +22,21 @@ const fetchAll = (url, result = []) =>
     return links.next ? fetchAll(links.next.url, result) : result
   })
 
+const buildOptions = (...options) => {
+  if (options) return options.join('&')
+  else return ''
+}
+
 const getAllSubaccounts = accountId =>
   fetchAll(canvasInstance + `/api/v1/accounts/${accountId}/sub_accounts?`)
 
 const getAllCourses = (deptIds, ...options) =>
   Promise.all(deptIds.map(deptId =>
-    fetchAll(canvasInstance + `/api/v1/accounts/${deptId}/courses?`) + options.join('&')))
+    fetchAll(canvasInstance + `/api/v1/accounts/${deptId}/courses?` + buildOptions(options))))
 
 const getAllStudents = (courseIds, ...options) =>
   Promise.all(courseIds.map(courseId =>
-    fetchAll(canvasInstance + `/api/v1/courses/${courseId}/users?` + options.join('&'))))
+    fetchAll(canvasInstance + `/api/v1/courses/${courseId}/users?` + buildOptions(options))))
 
 const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
   getAllSubaccounts(accountId)
@@ -42,7 +47,7 @@ const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
     .then(courses => courses.find(course => course.course_code === courseCode))
     .then(course => getAllStudents([course.id], 'include[]=email'))
     .then(students => R.flatten(students))
-    .then(students => students.map(student => student.email))
+    .then(students => students.map(student => console.log(student.email)))
 
 module.exports.getAllSubaccounts = getAllSubaccounts
 module.exports.getAllCourses = getAllCourses

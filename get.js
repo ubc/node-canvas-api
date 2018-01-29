@@ -22,7 +22,8 @@ const fetchAll = (url, result = []) =>
     return links.next ? fetchAll(links.next.url, result) : result
   })
 
-const getAllSubaccounts = accountId => fetchAll(canvasInstance + `/api/v1/accounts/${accountId}/sub_accounts?`)
+const getAllSubaccounts = accountId =>
+  fetchAll(canvasInstance + `/api/v1/accounts/${accountId}/sub_accounts?`)
 
 const getAllCourses = (deptIds, ...options) =>
   Promise.all(deptIds.map(deptId =>

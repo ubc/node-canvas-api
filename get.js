@@ -7,15 +7,15 @@ require('dotenv').config()
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 const getAllSubaccounts = accountId =>
-  fetchAll(canvasDomain + `/api/v1/accounts/${accountId}/sub_accounts?`)
+  fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`)
 
 const getAllCourses = (deptIds, ...options) =>
   Promise.all(deptIds.map(deptId =>
-    fetchAll(canvasDomain + `/api/v1/accounts/${deptId}/courses?` + buildOptions(options))))
+    fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options))))
 
 const getAllStudents = (courseIds, ...options) =>
   Promise.all(courseIds.map(courseId =>
-    fetchAll(canvasDomain + `/api/v1/courses/${courseId}/users?` + buildOptions(options))))
+    fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options))))
 
 const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
   getAllSubaccounts(accountId)

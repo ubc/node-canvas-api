@@ -8,4 +8,4 @@ const limiter = new Bottleneck({
 })
 
 limiter.schedule(() =>
-  getAllEmailsInCourse(1, '', '')) // dept, course_code
+  getAllEmailsInCourse(15, 'APBI', 'APBI415')) // dept, course_code

@@ -18,6 +18,8 @@ const fetchAll = (url, result = []) =>
     result = [...result, ...response.body]
     const links = linkparser(response.headers.link)
     return links.next ? fetchAll(links.next.url, result) : result
+  }).catch(err => {
+    throw new Error('API error', err)
   })
 
 const buildOptions = options => {

@@ -1,6 +1,7 @@
 const Promise = require('bluebird')
 const request = require('request-promise')
 const linkparser = require('parse-link-header')
+const util = require('./util')
 const R = require('ramda')
 require('dotenv').config()
 
@@ -22,21 +23,16 @@ const fetchAll = (url, result = []) =>
     return links.next ? fetchAll(links.next.url, result) : result
   })
 
-const buildOptions = options => {
-  if (options) return options.join('&')
-  else return ''
-}
-
 const getAllSubaccounts = accountId =>
   fetchAll(canvasInstance + `/api/v1/accounts/${accountId}/sub_accounts?`)
 
 const getAllCourses = (deptIds, ...options) =>
   Promise.all(deptIds.map(deptId =>
-    fetchAll(canvasInstance + `/api/v1/accounts/${deptId}/courses?` + buildOptions(options))))
+    fetchAll(canvasInstance + `/api/v1/accounts/${deptId}/courses?` + util.buildOptions(options))))
 
 const getAllStudents = (courseIds, ...options) =>
   Promise.all(courseIds.map(courseId =>
-    fetchAll(canvasInstance + `/api/v1/courses/${courseId}/users?` + buildOptions(options))))
+    fetchAll(canvasInstance + `/api/v1/courses/${courseId}/users?` + util.buildOptions(options))))
 
 const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
   getAllSubaccounts(accountId)

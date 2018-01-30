@@ -28,7 +28,9 @@ const getAllEmailsInCourse = (accountId, deptName, courseCode) =>
     .then(students => R.flatten(students))
     .then(students => console.log(students))
 
-module.exports.getAllSubaccounts = getAllSubaccounts
-module.exports.getAllCourses = getAllCourses
-module.exports.getAllStudents = getAllStudents
-module.exports.getAllEmailsInCourse = getAllEmailsInCourse
+module.exports = {
+  getAllSubaccounts,
+  getAllCourses,
+  getAllStudents,
+  getAllEmailsInCourse
+}

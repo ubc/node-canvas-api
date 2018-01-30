@@ -1,6 +1,6 @@
 const Bottleneck = require('bottleneck')
-const options = require('./endpoints/options')
-const get = require('./endpoints/get')
+const options = require('./src/options')
+const get = require('./src/get')
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,

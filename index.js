@@ -1,5 +1,4 @@
 const Bottleneck = require('bottleneck')
-const { getAllSubaccounts, getAllCourses, getAllStudents, getAllEmailsInCourse } = require('./get.js')
 const options = require('./endpoints/options')
 const get = require('./endpoints/get')
 
@@ -9,5 +8,6 @@ const limiter = new Bottleneck({
   Promise: Promise
 })
 
-limiter.schedule(() => get.getUsersInCourse(3040, options.users.include.email).then(x => console.log(x))
+limiter.schedule(() => get.getUsersInCourse(3040, options.users.include.email)
+  .then(x => console.log(x))
 )

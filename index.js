@@ -1,6 +1,7 @@
 const Bottleneck = require('bottleneck')
 const { getAllSubaccounts, getAllCourses, getAllStudents, getAllEmailsInCourse } = require('./get.js')
 const options = require('./endpoints/options')
+const get = require('./endpoints/get')
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,
@@ -8,5 +9,5 @@ const limiter = new Bottleneck({
   Promise: Promise
 })
 
-limiter.schedule(() =>
-  getAllEmailsInCourse(15, 'APBI', 'APBI415')) // dept, course_code
+limiter.schedule(() => get.getUsersInCourse(3040, options.users.include.email).then(x => console.log(x))
+)

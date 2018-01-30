@@ -1,9 +1,6 @@
 const Bottleneck = require('bottleneck')
 const { getAllSubaccounts, getAllCourses, getAllStudents, getAllEmailsInCourse } = require('./get.js')
 
-require('dotenv').config()
-const accountId = process.env.ACCOUNT_ID
-
 const limiter = new Bottleneck({
   maxConcurrent: 20,
   minTime: 100,
@@ -11,4 +8,4 @@ const limiter = new Bottleneck({
 })
 
 limiter.schedule(() =>
-  getAllEmailsInCourse(accountId, '', '')) // dept, course_code
+  getAllEmailsInCourse(1, '', '')) // dept, course_code

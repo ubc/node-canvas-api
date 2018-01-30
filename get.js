@@ -22,7 +22,7 @@ const fetchAll = (url, result = []) =>
     return links.next ? fetchAll(links.next.url, result) : result
   })
 
-const buildOptions = (options) => {
+const buildOptions = options => {
   if (options) return options.join('&')
   else return ''
 }

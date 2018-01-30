@@ -1,5 +1,6 @@
 const Bottleneck = require('bottleneck')
 const { getAllSubaccounts, getAllCourses, getAllStudents, getAllEmailsInCourse } = require('./get.js')
+const options = require('./endpoints/options')
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,

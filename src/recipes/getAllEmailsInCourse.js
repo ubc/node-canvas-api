@@ -1,5 +1,4 @@
-const options = require('../options')
-const get = require('../get')
+const { get, options } = require('../util')
 
 const getAllEmailsInCourse = async (accountId, deptName, courseCode) => {
   const subAccounts = await get.getSubaccounts(accountId)

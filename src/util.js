@@ -28,6 +28,16 @@ const buildOptions = options => {
   else return ''
 }
 
+const postRequest = (url, body) => request({
+  'method': 'POST',
+  'uri': url,
+  'json': true,
+  'form': body,
+  'headers': {
+    'Authorization': 'Bearer ' + token
+  }
+}).then(response => console.log(response))
+
 module.exports.get = {
   getSubaccounts: accountId => {
     return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`)
@@ -47,10 +57,12 @@ module.exports.get = {
 }
 
 module.exports.post = {
-
+  createCourse: (accountId, body) => {
+    return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body)
+  }
 }
 
-module.exports.options = {
+module.exports.getOptions = {
   users: {
     search: term => {
       return 'search_term=' + term
@@ -121,6 +133,17 @@ module.exports.options = {
       active: 'enrollment_state=active',
       invited_or_pending: 'enrollment_state=invited_or_pending',
       completed: 'enrollment_state=completed'
+    }
+  }
+}
+
+module.exports.postOptions = {
+  course: {
+    name: name => {
+      return `course[name]=${name}`
+    },
+    course_code: code => {
+      return `course[course_code]=${code}`
     }
   }
 }

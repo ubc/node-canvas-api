@@ -1,4 +1,4 @@
-const { get, options } = require('../util')
+const { get, getOptions } = require('../util')
 
 const getDeptId = async (accountId, deptName) => {
   const subAccounts = await get.getSubaccounts(accountId)
@@ -15,7 +15,7 @@ const getCourseId = async (accountId, deptName, courseCode) => {
 }
 
 const getStudentObjsFromCourseId = async courseId => {
-  const students = await get.getUsersInCourse(courseId, options.users.include.email)
+  const students = await get.getUsersInCourse(courseId, getOptions.users.include.email)
   return students
 }
 

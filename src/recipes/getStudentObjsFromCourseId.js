@@ -14,25 +14,19 @@ const getCourseId = async (accountId, deptName, courseCode) => {
   return course.id
 }
 
-const getStudentObjsFromCourseId = async courseId => {
-  const students = await get.getUsersInCourse(courseId, getOptions.users.include.email)
-  return students
-}
-
 const getAllNamesFromCourseId = async (accountId, deptName, courseCode) => {
   const courseId = await getCourseId(accountId, deptName, courseCode)
-  const students = await getStudentObjsFromCourseId(courseId)
+  const students = await get.getUsersInCourse(courseId)
   return students.map(student => student.name)
 }
 
 const getAllEmailsInCourse = async (accountId, deptName, courseCode) => {
   const courseId = await getCourseId(accountId, deptName, courseCode)
-  const students = await getStudentObjsFromCourseId(courseId)
+  const students = await get.getUsersInCourse(courseId, getOptions.users.include.email)
   return students.map(student => student.email)
 }
 
 module.exports = {
   getAllEmailsInCourse,
-  getAllNamesFromCourseId,
-  getStudentObjsFromCourseId
+  getAllNamesFromCourseId
 }

@@ -6,6 +6,11 @@ require('dotenv').config()
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 const token = process.env.CANVAS_API_TOKEN
 
+const buildOptions = options => {
+  if (options) return options.join('&')
+  else return ''
+}
+
 const fetchAll = (url, result = []) =>
   request({
     'method': 'GET',
@@ -19,14 +24,7 @@ const fetchAll = (url, result = []) =>
     result = [...result, ...response.body]
     const links = linkparser(response.headers.link)
     return links.next ? fetchAll(links.next.url, result) : result
-  }).catch(err => {
-    throw new Error('API error', err)
-  })
-
-const buildOptions = options => {
-  if (options) return options.join('&')
-  else return ''
-}
+  }).catch(err => console.log(err))
 
 const postRequest = (url, body) => request({
   'method': 'POST',
@@ -36,7 +34,7 @@ const postRequest = (url, body) => request({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-}).then(response => console.log(response))
+}).then(response => response).catch(err => console.log(err))
 
 const putRequest = (url, body) => request({
   'method': 'PUT',
@@ -46,7 +44,17 @@ const putRequest = (url, body) => request({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-}).then(response => console.log(response))
+}).then(response => response).catch(err => console.log(err.message, err.options.form, err.options.uri))
+
+const deleteRequest = (url, body) => request({
+  'method': 'DELETE',
+  'uri': url,
+  'json': true,
+  'form': body,
+  'headers': {
+    'Authorization': 'Bearer ' + token
+  }
+}).then(response => response).catch(err => console.log(err))
 
 module.exports.get = {
   getSubaccounts: accountId => {
@@ -63,6 +71,9 @@ module.exports.get = {
   },
   getCoursesByUser: (userId, ...options) => {
     return fetchAll(canvasDomain + `/users/${userId}/courses`)
+  },
+  getCustomGradeBookColumns: courseId => {
+    return fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`)
   }
 }
 
@@ -70,14 +81,23 @@ module.exports.post = {
   createCourse: (accountId, body) => {
     return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body)
   },
-  createCustomGradebookColumn: (courseId, body) => {
-    return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, body)
+  createCustomGradebookColumn: (courseId, columnTitle, columnPosition) => {
+    return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
+      'column[title]': columnTitle,
+      'column[position]': columnPosition
+    })
   }
 }
 
 module.exports.put = {
-  studentNumberInGradeColumn: (courseId, gradebookColumnId, studentId, body) => {
+  putStudentNumberInGradeColumn: (courseId, gradebookColumnId, studentId, body) => {
     return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body)
+  }
+}
+
+module.exports.del = {
+  deleteCustomGradebookColumn: (courseId, gradebookColumnId) => {
+    return deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
   }
 }
 

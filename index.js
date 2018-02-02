@@ -1,6 +1,7 @@
 const Bottleneck = require('bottleneck')
-const { getAllEmailsInCourse, getAllNamesFromCourseId, getStudentObjsFromCourseId } = require('./src/recipes/getAllEmailsInCourse')
-const { post, put } = require('./src/util')
+const putStudentNumbersInGradebook = require('./src/recipes/putStudentNumbersInGradebook')
+const deleteAllCustomGradebookColumns = require('./src/recipes/deleteAllCustomGradebookColumns')
+const { post, put, get, del, getOptions } = require('./src/util')
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,
@@ -8,12 +9,4 @@ const limiter = new Bottleneck({
   Promise: Promise
 })
 
-getStudentObjsFromCourseId(3025)
-  .then(students => students.map(({ id, sis_user_id }) => put.studentNumberInGradeColumn(3025, 197, id, { 'column_data[content]': sis_user_id })))
-
-// . map(({ id, sis_user_id }) => put.studentNumberInGradeColumn(3025, 197, id, { 'column_data[content]': sis_user_id })))
-
-// limiter.schedule(() => post.createCustomGradebookColumn(3025, {
-//   'column[title]': 'Student Number',
-//   'column[position]': 1
-// }))
+deleteAllCustomGradebookColumns(3025).then(x => console.log(x))

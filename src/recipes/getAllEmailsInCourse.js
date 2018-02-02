@@ -33,5 +33,6 @@ const getAllEmailsInCourse = async (accountId, deptName, courseCode) => {
 
 module.exports = {
   getAllEmailsInCourse,
-  getAllNamesFromCourseId
+  getAllNamesFromCourseId,
+  getStudentObjsFromCourseId
 }

@@ -38,6 +38,16 @@ const postRequest = (url, body) => request({
   }
 }).then(response => console.log(response))
 
+const putRequest = (url, body) => request({
+  'method': 'PUT',
+  'uri': url,
+  'json': true,
+  'form': body,
+  'headers': {
+    'Authorization': 'Bearer ' + token
+  }
+}).then(response => console.log(response))
+
 module.exports.get = {
   getSubaccounts: accountId => {
     return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`)
@@ -59,6 +69,15 @@ module.exports.get = {
 module.exports.post = {
   createCourse: (accountId, body) => {
     return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body)
+  },
+  createCustomGradebookColumn: (courseId, body) => {
+    return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, body)
+  }
+}
+
+module.exports.put = {
+  studentNumberInGradeColumn: (courseId, gradebookColumnId, studentId, body) => {
+    return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body)
   }
 }
 

@@ -1,4 +1,7 @@
-const { get, post, put, getOptions } = require('../util')
+const { getOptions } = require('../requests/options')
+const get = require('../requests/get')
+const post = require('../requests/post')
+const put = require('../requests/put')
 
 const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPosition) => {
   const customGradeBook = await post.createCustomGradebookColumn(courseId, columnTitle, columnPosition)

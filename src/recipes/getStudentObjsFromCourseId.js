@@ -1,4 +1,5 @@
-const { get, getOptions } = require('../util')
+const { getOptions } = require('../requests/options')
+const get = require('../requests/get')
 
 const getDeptId = async (accountId, deptName) => {
   const subAccounts = await get.getSubaccounts(accountId)

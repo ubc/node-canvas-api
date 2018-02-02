@@ -1,4 +1,5 @@
 const request = require('request-promise')
+const { buildOptions } = require('../util')
 const linkparser = require('parse-link-header')
 
 require('dotenv').config()

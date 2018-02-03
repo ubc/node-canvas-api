@@ -8,7 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You'll need Node installed on your machine. 
+1. **Install [Node 8.0.0 or greater](https://nodejs.org)**.
+2. **Install [Git](https://git-scm.com/downloads)**. 
 
 ```
 Give examples

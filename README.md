@@ -11,78 +11,32 @@ These instructions will get you a copy of the project up and running on your loc
 1. **Install [Node 8.0.0 or greater](https://nodejs.org)**.
 2. **Install [Git](https://git-scm.com/downloads)**. 
 
-```
-Give examples
-```
+### Installing and Setup
 
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+1. First, clone this repo. `git clone https://github.com/UBC-LFS/canvas-api.git`
+2. Then cd into the repo. `cd canvas-api`
+3. Run the installation script. If you see `babel-node: command not found`, you've missed this step. `npm install`
+4. Create a .env file. `touch .env`
+5. In the .env file, add `CANVAS_API_TOKEN=` and your API token, and `CANVAS_API_DOMAIN=` and your Canvas domain.
+6. Import the scripts from the `src/recipes` folder in `index.js` that you would like to run.
+7. Run using `node index.js`.
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+`npm test` starts Jest in watch mode. To quit, `control + c`. 
 
-### Break down into end to end tests
+<!-- ## Built With
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Node](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Jest](https://maven.apache.org/) - Dependency Management
+* [Request](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Justin Lee** 
+(https://github.com/justin0022)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc

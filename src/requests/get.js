@@ -23,22 +23,16 @@ const fetchAll = (url, result = []) =>
   }).catch(err => console.log(err))
 
 module.exports = {
-  getSubaccounts: accountId => {
-    return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`)
-  },
-  getUsersInAccount: accountId => {
-    return fetchAll(canvasDomain + `/accounts/${accountId}/users?`)
-  },
-  getUsersInCourse: (courseId, ...options) => {
-    return fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options))
-  },
-  getCourses: (deptId, ...options) => {
-    return fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options))
-  },
-  getCoursesByUser: (userId, ...options) => {
-    return fetchAll(canvasDomain + `/users/${userId}/courses`)
-  },
-  getCustomGradeBookColumns: courseId => {
-    return fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`)
-  }
+  getSubaccounts: accountId =>
+    fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`),
+  getUsersInAccount: accountId =>
+    fetchAll(canvasDomain + `/accounts/${accountId}/users?`),
+  getUsersInCourse: (courseId, ...options) =>
+    fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)),
+  getCourses: (deptId, ...options) =>
+    fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options)),
+  getCoursesByUser: (userId, ...options) =>
+    fetchAll(canvasDomain + `/users/${userId}/courses`),
+  getCustomGradeBookColumns: courseId =>
+    fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`)
 }

@@ -16,7 +16,6 @@ const deleteRequest = (url, body) => request({
 }).then(response => response).catch(err => console.log(err))
 
 module.exports = {
-  deleteCustomGradebookColumn: (courseId, gradebookColumnId) => {
-    return deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
-  }
+  deleteCustomGradebookColumn: (courseId, gradebookColumnId) =>
+    deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
 }

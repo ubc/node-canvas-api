@@ -16,13 +16,11 @@ const postRequest = (url, body) => request({
 }).then(response => response).catch(err => console.log(err))
 
 module.exports = {
-  createCourse: (accountId, body) => {
-    return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body)
-  },
-  createCustomGradebookColumn: (courseId, columnTitle, columnPosition) => {
-    return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
+  createCourse: (accountId, body) =>
+    postRequest(canvasDomain + `/accounts/${accountId}/courses`, body),
+  createCustomGradebookColumn: (courseId, columnTitle, columnPosition) =>
+    postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
       'column[title]': columnTitle,
       'column[position]': columnPosition
     })
-  }
 }

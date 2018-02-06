@@ -1,8 +1,6 @@
 module.exports.getOptions = {
   users: {
-    search: term => {
-      return 'search_term=' + term
-    },
+    search: term => 'search_term=' + term,
     sort: {
       username: 'sort=username',
       email: 'sort=email',
@@ -31,9 +29,7 @@ module.exports.getOptions = {
       custom_links: 'include[]=custom_links',
       current_grading_period_scores: 'include[]=current_grading_period_scores'
     },
-    userIds: id => {
-      return `user_ids[]=${id}`
-    },
+    userIds: id => `user_ids[]=${id}`,
     enrollmentState: {
       active: 'enrollment_state=active',
       invited: 'enrollment_state=invited',
@@ -75,11 +71,7 @@ module.exports.getOptions = {
 
 module.exports.postOptions = {
   course: {
-    name: name => {
-      return `course[name]=${name}`
-    },
-    course_code: code => {
-      return `course[course_code]=${code}`
-    }
+    name: name => `course[name]=${name}`,
+    course_code: code => `course[course_code]=${code}`
   }
 }

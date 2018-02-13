@@ -7,8 +7,10 @@ const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPositio
   const customGradeBook = await createCustomGradebookColumn(courseId, columnTitle, columnPosition)
   const customGradeBookId = await customGradeBook.id
   const studentObjs = await getUsersInCourse(courseId, getOptions.users.enrollmentType.student)
-  const responseCustomGradebook = Promise.all(studentObjs.map(({ id, sis_user_id }) =>
-    putStudentNumberInGradeColumn(courseId, customGradeBookId, id, { 'column_data[content]': sis_user_id })))
+  const responseCustomGradebook = Promise.all(
+    studentObjs.map(({ id, sis_user_id }) =>
+      putStudentNumberInGradeColumn(courseId, customGradeBookId, id, { 'column_data[content]': sis_user_id }))
+  )
   return responseCustomGradebook
 }
 

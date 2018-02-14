@@ -2,3 +2,4 @@ const putStudentNumbersInGradebook = require('./src/recipes/putStudentNumbersInG
 
 // modify the CHANGE_ME to a Canvas course id.
 putStudentNumbersInGradebook(CHANGE_ME, 'Student Number', 1)
+  .then(response => console.log(response))

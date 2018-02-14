@@ -22,5 +22,9 @@ module.exports = {
     postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
       'column[title]': columnTitle,
       'column[position]': columnPosition
+    }),
+  courseCopy: (sourceCourseId, targetCourseId) =>
+    postRequest(canvasDomain + `/courses/${targetCourseId}/content_migrations`, {
+      'settings[source_course_id]': sourceCourseId
     })
 }

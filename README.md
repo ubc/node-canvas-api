@@ -25,12 +25,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 `npm test` starts Jest in watch mode. To quit, `control + c`. 
 
-<!-- ## Built With
-
-* [Node](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Jest](https://maven.apache.org/) - Dependency Management
-* [Request](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
-
 ## Authors
 
 * **Justin Lee** 

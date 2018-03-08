@@ -1,3 +1,5 @@
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 # Canvas API Recipes for Node
 
 The Canvas API client exposes many useful "recipes" for automating tedious or otherwise impossible tasks to do via the website. 

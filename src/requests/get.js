@@ -34,5 +34,7 @@ module.exports = {
   getCoursesByUser: (userId, ...options) =>
     fetchAll(canvasDomain + `/users/${userId}/courses`),
   getCustomGradeBookColumns: courseId =>
-    fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`)
+    fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`),
+  getProgress: id =>
+    fetchAll(canvasDomain + `/progress/${id}`)
 }

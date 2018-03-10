@@ -34,7 +34,8 @@ const getStudentNamesAndEmailsFromCourse = async courseId => {
     getOptions.users.include.email,
     getOptions.users.enrollmentState.active
   )
-  const studentNamesAndEmails = studentObjs.map(({ id, email }) => ({ id, email }))
+  const studentNamesAndEmails = studentObjs
+    .map(({ id, email }) => ({ id, email }))
   return studentNamesAndEmails
 }
 
@@ -44,7 +45,8 @@ const getStudentNumbersAndEmailsFromCourse = async courseId => {
     getOptions.users.include.email,
     getOptions.users.enrollmentState.active
   )
-  const studentNumbersAndEmails = studentObjs.map(({ sis_user_id, email }) => ({ sis_user_id, email }))
+  const studentNumbersAndEmails = studentObjs
+    .map(({ sis_user_id, email }) => ({ sis_user_id, email }))
   return studentNumbersAndEmails
 }
 

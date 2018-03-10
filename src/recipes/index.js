@@ -1,8 +1,9 @@
 module.exports = {
   copyCourseContent: require('./copyCourseContent'),
   deleteAllCustomGradebookColumns: require('./deleteAllCustomGradebookColumns'),
-  getDeptIds: require('./getDeptIds'),
+  getDeptIdsInAccount: require('./getDeptIdsInAccount'),
   getStudentAttributesFromCourse: require('./getStudentAttributesFromCourse'),
   putStudentNumbersInGradebook: require('./putStudentNumbersInGradebook'),
-  getAllCoursesInDept: require('./getAllCoursesInDept')
+  getAllCoursesInDept: require('./getAllCoursesInDept'),
+  getAccountIds: require('./getAccountIds')
 }

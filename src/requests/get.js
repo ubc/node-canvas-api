@@ -23,6 +23,7 @@ const fetchAll = (url, result = []) =>
   }).catch(err => console.log(err))
 
 module.exports = {
+  getAccounts: () => fetchAll(canvasDomain + `/accounts`),
   getSubaccounts: accountId =>
     fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`),
   getUsersInAccount: accountId =>

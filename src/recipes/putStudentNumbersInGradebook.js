@@ -1,4 +1,4 @@
-const { getOptions } = require('../requests/options')
+const { getOptions } = require('../options')
 const { getUsersInCourse } = require('../requests/get')
 const { createCustomGradebookColumn } = require('../requests/post')
 const { putStudentNumberInGradeColumn } = require('../requests/put')

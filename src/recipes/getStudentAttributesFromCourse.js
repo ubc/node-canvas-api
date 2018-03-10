@@ -1,5 +1,5 @@
 const { getUsersInCourse } = require('../requests/get')
-const { getOptions } = require('../requests/options')
+const { getOptions } = require('../options')
 
 const getStudentNamesFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId, getOptions.users.enrollmentType.student)

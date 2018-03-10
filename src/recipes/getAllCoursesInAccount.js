@@ -1,5 +1,4 @@
 const { getSubaccounts, getCourses } = require('../requests/get')
-const { getOptions } = require('../requests/options')
 const R = require('ramda')
 
 const getAllCoursesInAccount = async (accountId, ...options) => {

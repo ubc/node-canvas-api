@@ -27,7 +27,8 @@ module.exports.getOptions = {
       test_student: 'include[]=test_student',
       bio: 'include[]=bio',
       custom_links: 'include[]=custom_links',
-      current_grading_period_scores: 'include[]=current_grading_period_scores'
+      current_grading_period_scores: 'include[]=current_grading_period_scores',
+      term: 'include[]=term'
     },
     userIds: id => `user_ids[]=${encodeURIComponent(id)}`,
     enrollmentState: {

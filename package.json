@@ -13,6 +13,8 @@
     "bottleneck": "^2.0.1",
     "config": "^1.29.2",
     "dotenv": "^4.0.0",
+    "google-auth-library": "^0.12.0",
+    "googleapis": "^25.0.0",
     "inquirer": "^5.1.0",
     "jest": "^22.1.4",
     "parse-link-header": "^1.0.1",

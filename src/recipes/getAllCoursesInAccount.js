@@ -8,6 +8,6 @@ const getAllCoursesInAccount = async (accountId, ...options) => {
     accounts.map(({ id }) => getCourses(id, ...options))
   )
   return R.flatten(courses)
-} 
+}
 
 module.exports = getAllCoursesInAccount

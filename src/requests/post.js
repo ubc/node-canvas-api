@@ -25,6 +25,7 @@ module.exports = {
     }),
   courseCopy: (sourceCourseId, targetCourseId) =>
     postRequest(canvasDomain + `/courses/${targetCourseId}/content_migrations`, {
-      'settings[source_course_id]': sourceCourseId
+      'migration_type': 'course_copy_importer',
+      'settings[source_course_id]': `${sourceCourseId}`
     })
 }

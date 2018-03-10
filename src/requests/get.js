@@ -39,5 +39,7 @@ module.exports = {
   getProgress: id =>
     fetchAll(canvasDomain + `/progress/${id}`),
   getUserPageViews: userId =>
-    fetchAll(canvasDomain + `/users/${userId}/page_views`)
+    fetchAll(canvasDomain + `/users/${userId}/page_views`),
+  getAnalytics: accountId =>
+    fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`)
 }

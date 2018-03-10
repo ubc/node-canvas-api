@@ -36,5 +36,7 @@ module.exports = {
   getCustomGradeBookColumns: courseId =>
     fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`),
   getProgress: id =>
-    fetchAll(canvasDomain + `/progress/${id}`)
+    fetchAll(canvasDomain + `/progress/${id}`),
+  getUserPageViews: userId =>
+    fetchAll(canvasDomain + `/users/${userId}/page_views`)
 }

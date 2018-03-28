@@ -30,8 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 ## Authors
 
 * **Justin Lee** 
-(https://github.com/justin0022)
-justin.lee@ubc.ca
+https://github.com/justin0022 | justin.lee@ubc.ca
 
 ## License
 

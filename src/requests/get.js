@@ -28,10 +28,10 @@ module.exports = {
     fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`),
   getUsersInAccount: accountId =>
     fetchAll(canvasDomain + `/accounts/${accountId}/users?`),
-  getUsersInCourse: (courseId, ...options) =>
-    fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)),
   getCourses: (deptId, ...options) =>
     fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options)),
+  getUsersInCourse: (courseId, ...options) =>
+    fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)),
   getCoursesByUser: (userId, ...options) =>
     fetchAll(canvasDomain + `/users/${userId}/courses`),
   getCustomGradeBookColumns: courseId =>

@@ -67,12 +67,12 @@ module.exports.getOptions = {
       invited_or_pending: 'enrollment_state=invited_or_pending',
       completed: 'enrollment_state=completed'
     }
-  }
-}
-
-module.exports.postOptions = {
-  course: {
-    name: name => `course[name]=${encodeURIComponent(name)}`,
-    course_code: code => `course[course_code]=${encodeURIComponent(code)}`
+  },
+  account: {
+    with_enrollments: 'with_enrollments=true',
+    enrollment_type: role => `enrollment_type[]=${encodeURIComponent(role)}`,
+    published: 'published=true',
+    completed: 'completed=true',
+    blueprint: 'blueprint=true'
   }
 }

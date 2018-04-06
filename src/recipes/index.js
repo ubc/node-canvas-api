@@ -6,5 +6,6 @@ module.exports = {
   getDeptIdsInAccount: require('./getDeptIdsInAccount'),
   getStudentAttributesFromCourse: require('./getStudentAttributesFromCourse'),
   putStudentNumbersInGradebook: require('./putStudentNumbersInGradebook'),
-  getAllCoursesInDept: require('./getAllCoursesInDept')
+  getAllCoursesInDept: require('./getAllCoursesInDept'),
+  getAllCoursesInTerm: require('./getAllCoursesInTerm')
 }

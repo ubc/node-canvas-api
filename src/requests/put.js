@@ -17,5 +17,9 @@ const putRequest = (url, body) => request({
 
 module.exports = {
   putStudentNumberInGradeColumn: (courseId, gradebookColumnId, studentId, body) =>
-    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body)
+    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body),
+  hideGradebookColumn: (courseId, columnId) =>
+    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
+      'column[hidden]': true
+    })
 }

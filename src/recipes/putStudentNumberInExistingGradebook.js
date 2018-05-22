@@ -1,11 +1,8 @@
 const { getOptions } = require('../options')
 const { getUsersInCourse } = require('../requests/get')
-const { createCustomGradebookColumn } = require('../requests/post')
 const { putStudentNumberInGradeColumn } = require('../requests/put')
 
-const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPosition = 1) => {
-  const customGradeBook = await createCustomGradebookColumn(courseId, columnTitle, columnPosition)
-  const customGradeBookId = customGradeBook.id
+const putStudentNumbersInExistingGradebook = async (courseId, customGradeBookId) => {
   const studentObjs = await getUsersInCourse(courseId, getOptions.users.enrollmentType.student)
   const customGradebookResponse = Promise.all(
     studentObjs.map(({ id, sis_user_id }) =>
@@ -14,4 +11,4 @@ const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPositio
   return customGradebookResponse
 }
 
-module.exports = putStudentNumbersInGradebook
+module.exports = putStudentNumbersInExistingGradebook

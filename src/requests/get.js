@@ -41,5 +41,7 @@ module.exports = {
   getUserPageViews: userId =>
     fetchAll(canvasDomain + `/users/${userId}/page_views`),
   getAnalytics: accountId =>
-    fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`)
+    fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`),
+  getAssignments: (courseId, ...options) =>
+    fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options))
 }

@@ -6,7 +6,10 @@ const hideCustomGradebookColumns = async (courseId, ...gradebookColumnNames) => 
   const matchingGradebookColumnID = customGradebookColumns
     .filter(({ title }) => (gradebookColumnNames.includes(title)))
     .map(gradebookColumn => gradebookColumn.id)
-  const response = Promise.all(matchingGradebookColumnID.map(gradebookId => hideCustomGradebookColumn(courseId, gradebookId)))
+  const response = Promise.all(
+    matchingGradebookColumnID.map(gradebookId =>
+      hideCustomGradebookColumn(courseId, gradebookId))
+  )
   return response
 }
 

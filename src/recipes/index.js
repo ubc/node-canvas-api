@@ -8,5 +8,7 @@ module.exports = {
   putStudentNumbersInGradebook: require('./putStudentNumbersInGradebook'),
   putStudentNumbersInExistingGradeook: require('./putStudentNumberInExistingGradebook'),
   getAllCoursesInDept: require('./getAllCoursesInDept'),
-  getAllCoursesInTerm: require('./getAllCoursesInTerm')
+  getAllCoursesInTerm: require('./getAllCoursesInTerm'),
+  hideCustomGradebookColumns: require('./hideCustomGradebookColumns'),
+  showCustomGradebookColumns: require('./showCustomGradebookColumns')
 }

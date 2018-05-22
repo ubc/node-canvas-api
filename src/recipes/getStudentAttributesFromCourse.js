@@ -9,6 +9,7 @@ const getStudentNamesFromCourse = async courseId => {
   return studentNames
 }
 
+// emails don't appear to be working anymore...
 const getStudentEmailsFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId,
     getOptions.users.enrollmentType.student,
@@ -28,6 +29,7 @@ const getStudentNumbersFromCourse = async courseId => {
   return studentNumbers
 }
 
+// emails don't appear to be working anymore...
 const getStudentNamesAndEmailsFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId,
     getOptions.users.enrollmentType.student,
@@ -39,12 +41,14 @@ const getStudentNamesAndEmailsFromCourse = async courseId => {
   return studentNamesAndEmails
 }
 
+// emails don't appear to be working anymore...
 const getStudentNumbersAndEmailsFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId,
     getOptions.users.enrollmentType.student,
     getOptions.users.include.email,
     getOptions.users.enrollmentState.active
   )
+  console.log(studentObjs)
   const studentNumbersAndEmails = studentObjs
     .map(({ sis_user_id, email }) => ({ sis_user_id, email }))
   return studentNumbersAndEmails

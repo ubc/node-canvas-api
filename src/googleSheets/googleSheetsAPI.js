@@ -21,6 +21,11 @@ function getData (auth, range) {
   })
 }
 
-authentication.authenticate().then(auth => {
-  getData(auth, 'A1:C1')
-})
+function writeData (auth, range, data) {
+  // 
+}
+
+module.exports = {
+  getData,
+  writeData
+}

@@ -10,3 +10,4 @@
 ## Script 2: Initiate course copy
 - [ ] Once the destination course IDs are filled in, there should be another script that starts the course copy process, according to the values filled into quizzes, modules, etc.
 - [ ] If destination course ID field is missing, don't copy. If quizzes/modules are not marked as '1', don't copy. 
+- [ ] Polling to check the status of the copies, and indicate when a copy/copies are complete. 

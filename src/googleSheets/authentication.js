@@ -1,17 +1,20 @@
 const fs = require('fs')
 const readline = require('readline')
 const {google} = require('googleapis')
+const coursesInTerm = require('./initiateCourseCopy')
 
 // If modifying these scopes, delete credentials.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 const TOKEN_PATH = 'credentials.json'
 
 // Load client secrets from a local file.
-fs.readFile('client_secret.json', (err, content) => {
-  if (err) return console.log('Error loading client secret file:', err)
-  // Authorize a client with credentials, then call the Google Sheets API.
-  authorize(JSON.parse(content), initialize)
-})
+const editFile = (clientSecret, runAction, data) => {
+  fs.readFile(clientSecret, (err, content) => {
+    if (err) return console.log('Error loading client secret file:', err)
+    // Authorize a client with credentials, then call the Google Sheets API.
+    authorize(JSON.parse(content), runAction, data)
+  })
+}
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -19,7 +22,7 @@ fs.readFile('client_secret.json', (err, content) => {
  * @param {Object} credentials The authorization client credentials.
  * @param {function} callback The callback to call with the authorized client.
  */
-function authorize (credentials, callback) {
+function authorize (credentials, callback, data) {
   const {client_secret, client_id, redirect_uris} = credentials.installed
   const oAuth2Client = new google.auth.OAuth2(
     client_id, client_secret, redirect_uris[0])
@@ -28,7 +31,7 @@ function authorize (credentials, callback) {
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback)
     oAuth2Client.setCredentials(JSON.parse(token))
-    callback(oAuth2Client)
+    callback(oAuth2Client, data)
   })
 }
 
@@ -63,11 +66,10 @@ function getNewToken (oAuth2Client, callback) {
   })
 }
 
-// module.exports = new Authentication()
-
-function initialize (auth) {
+function initialize (auth, data) {
   const sheets = google.sheets({version: 'v4', auth})
   sheets.spreadsheets.values.batchUpdate({
+    auth,
     spreadsheetId: '1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI',
     resource: {
       valueInputOption: 'RAW',
@@ -75,7 +77,7 @@ function initialize (auth) {
         {
           range: 'A1:G1',
           majorDimension: 'ROWS',
-          values: [['Name of Course', 'Dept', 'Section', 'ID', 'Destination Course ID', 'Quizzes', 'Modules']]
+          values: [data]
         }
       ]
     }
@@ -84,7 +86,13 @@ function initialize (auth) {
       console.log('The API returned an error: ' + err)
       return
     }
-    console.log(result)
+    console.log('Correctly Initialized, please check at https://docs.google.com/spreadsheets/d/1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI/edit#gid=0')
     return result
   })
+}
+
+module.exports = {
+  authorize,
+  editFile,
+  initialize
 }

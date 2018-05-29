@@ -66,33 +66,7 @@ function getNewToken (oAuth2Client, callback) {
   })
 }
 
-function initialize (auth, data) {
-  const sheets = google.sheets({version: 'v4', auth})
-  sheets.spreadsheets.values.batchUpdate({
-    auth,
-    spreadsheetId: '1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI',
-    resource: {
-      valueInputOption: 'RAW',
-      data: [
-        {
-          range: 'A1:G1',
-          majorDimension: 'ROWS',
-          values: [data]
-        }
-      ]
-    }
-  }, (err, result) => {
-    if (err) {
-      console.log('The API returned an error: ' + err)
-      return
-    }
-    console.log('Correctly Initialized, please check at https://docs.google.com/spreadsheets/d/1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI/edit#gid=0')
-    return result
-  })
-}
-
 module.exports = {
   authorize,
-  editFile,
-  initialize
+  editFile
 }

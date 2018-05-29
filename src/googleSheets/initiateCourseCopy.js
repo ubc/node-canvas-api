@@ -13,6 +13,9 @@ const coursesInTerm = (accountID, year, term) => getAllCoursesInTerm(accountID, 
 const getCourseName = courses =>
   courses.map(courses => courses.name)
 
+const getDept = (accountID, year, term) => coursesInTerm(accountID, year, term)
+  .then(courses => courses.map(course => course.split(' ')[0]))
+
 const copyCourseNames = (auth, data) => {
   const sheets = google.sheets({ version: 'v4', auth })
   sheets.spreadsheets.values.batchUpdate({
@@ -38,6 +41,31 @@ const copyCourseNames = (auth, data) => {
   })
 }
 
+const copyDept = (auth, data) => {
+  const sheets = google.sheets({ version: 'v4', auth })
+  sheets.spreadsheets.values.batchUpdate({
+    auth,
+    spreadsheetId: spreadsheetId,
+    resource: {
+      valueInputOption: 'RAW',
+      data: [
+        {
+          range: 'B2',
+          majorDimension: 'COLUMNS',
+          values: [data]
+        }
+      ]
+    }
+  }, (err, result) => {
+    if (err) {
+      console.log('The API returned an error: ' + err)
+      return
+    }
+    console.log('Dept copied, please check at https://docs.google.com/spreadsheets/d/1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI/edit#gid=0')
+    return result
+  })
+}
+
 const eraseAll = (auth, data) => {
   const sheets = google.sheets({ version: 'v4', auth })
   sheets.spreadsheets.values.clear({
@@ -55,6 +83,8 @@ const eraseAll = (auth, data) => {
 
 module.exports = {
   coursesInTerm,
+  getDept,
   copyCourseNames,
+  copyDept,
   eraseAll
 }

@@ -16,6 +16,14 @@ const getCourseName = courses =>
 const getDept = (accountID, year, term) => coursesInTerm(accountID, year, term)
   .then(courses => courses.map(course => course.split(' ')[0]))
 
+const getSection = (accountID, year, term) => coursesInTerm(accountID, year, term)
+  .then(courses => courses.map(course => course.split(' ')[2]))
+
+const getID = (accountID, year, term) => getAllCoursesInTerm(accountID, year, term)
+  .then(courses => courses.map(course => course.id))
+
+const getModules = (accountID, year, term) => getAllCoursesInTerm(accountID, year, term)
+
 const copyCourseNames = (auth, data) => {
   const sheets = google.sheets({ version: 'v4', auth })
   sheets.spreadsheets.values.batchUpdate({
@@ -66,6 +74,56 @@ const copyDept = (auth, data) => {
   })
 }
 
+const copySection = (auth, data) => {
+  const sheets = google.sheets({ version: 'v4', auth })
+  sheets.spreadsheets.values.batchUpdate({
+    auth,
+    spreadsheetId: spreadsheetId,
+    resource: {
+      valueInputOption: 'RAW',
+      data: [
+        {
+          range: 'C2',
+          majorDimension: 'COLUMNS',
+          values: [data]
+        }
+      ]
+    }
+  }, (err, result) => {
+    if (err) {
+      console.log('The API returned an error: ' + err)
+      return
+    }
+    console.log('Section copied, please check at https://docs.google.com/spreadsheets/d/1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI/edit#gid=0')
+    return result
+  })
+}
+
+const copyID = (auth, data) => {
+  const sheets = google.sheets({ version: 'v4', auth })
+  sheets.spreadsheets.values.batchUpdate({
+    auth,
+    spreadsheetId: spreadsheetId,
+    resource: {
+      valueInputOption: 'RAW',
+      data: [
+        {
+          range: 'D2',
+          majorDimension: 'COLUMNS',
+          values: [data]
+        }
+      ]
+    }
+  }, (err, result) => {
+    if (err) {
+      console.log('The API returned an error: ' + err)
+      return
+    }
+    console.log('ID copied, please check at https://docs.google.com/spreadsheets/d/1PyTUob8HNSsjr0_SWRbPBTSdFeY5kjCE5yxmgcQMljI/edit#gid=0')
+    return result
+  })
+}
+
 const eraseAll = (auth, data) => {
   const sheets = google.sheets({ version: 'v4', auth })
   sheets.spreadsheets.values.clear({
@@ -84,7 +142,12 @@ const eraseAll = (auth, data) => {
 module.exports = {
   coursesInTerm,
   getDept,
+  getSection,
+  getID,
+  getModules,
   copyCourseNames,
   copyDept,
+  copySection,
+  copyID,
   eraseAll
 }

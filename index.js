@@ -6,43 +6,31 @@ const options = require('./src/options')
 const { coursesInTerm, getDept, getSection, getID, getModules, copyCourseNames, copyDept, copySection, copyID, eraseAll } = require('./src/googleSheets/initiateCourseCopy')
 const { authorize, editFile } = require('./src/googleSheets/authentication')
 const initialize = require('./src/googleSheets/populateSpreadsheet')
+const getAllCoursesInTerm = require('./src/recipes/getAllCoursesInTerm')
 
 // const courseID = // put the course ID here
 // const gradebookID = // put the gradebook ID heer
 
-// Populate Name of Course
-const populateName = async () => {
-  const termCourses = await coursesInTerm(15, 2018, 'S1')
-  editFile('./src/googleSheets/client_secret.json', copyCourseNames, termCourses)
+const client_secret = './src/googleSheets/client_secret.json'
+
+// getModules(15, 2018, 'S1').then(x => console.log(x))
+
+const termCoursePopulate = async () => {
+  const termCourses = await getAllCoursesInTerm(15, 2018, 'S1')
+  const courses = coursesInTerm(termCourses)
+  const dept = getDept(courses)
+  const section = getSection(courses)
+  const id = getID(termCourses)
+  editFile(client_secret, initialize, ['Name of Course', 'Dept', 'Section', 'ID', 'Destination ID', 'Quizzes', 'Modules'])
+  editFile(client_secret, copyCourseNames, courses)
+  editFile(client_secret, copyDept, dept)
+  editFile(client_secret, copySection, section)
+  editFile(client_secret, copyID, id)
 }
 
-// Populate Dept
-const populateDept = async () => {
-  const coursesDept = await getDept(15, 2018, 'S1')
-  editFile('./src/googleSheets/client_secret.json', copyDept, coursesDept)
+const mainFunction = async () => {
+  await editFile(client_secret, eraseAll, 'Sheet1')
+  termCoursePopulate()
 }
 
-// Populate Section
-const populateSection = async () => {
-  const coursesSection = await getSection(15, 2018, 'S1')
-  editFile('./src/googleSheets/client_secret.json', copySection, coursesSection)
-}
-
-// Populate Section
-const populateID = async () => {
-  const courseID = await getID(15, 2018, 'S1')
-  editFile('./src/googleSheets/client_secret.json', copyID, courseID)
-}
-
-// run this code to clear all data in spreadsheet
-// editFile('./src/googleSheets/client_secret.json', eraseAll, 'Sheet1')
-
-// run this code to initialize the spreadsheet
-// editFile('./src/googleSheets/client_secret.json', initialize, ['Name of Course', 'Dept', 'Section', 'ID', 'Destination ID', 'Quizzes', 'Modules'])
-
-// populateName()
-// populateDept()
-// populateSection()
-// populateID()
-
-getModules(15, 2018, 'S1').then(x => console.log(x))
+mainFunction()

@@ -7,20 +7,13 @@ require('dotenv').config()
 
 const spreadsheetId = process.env.GOOGLE_SHEETS_ID
 
-const coursesInTerm = (accountID, year, term) => getAllCoursesInTerm(accountID, year, term)
-  .then(courses => getCourseName(courses))
+const coursesInTerm = courses => courses.map(courses => courses.name)
 
-const getCourseName = courses =>
-  courses.map(courses => courses.name)
+const getDept = (courses) => courses.map(course => course.split(' ')[0])
 
-const getDept = (accountID, year, term) => coursesInTerm(accountID, year, term)
-  .then(courses => courses.map(course => course.split(' ')[0]))
+const getSection = (courses) => courses.map(course => course.split(' ')[2])
 
-const getSection = (accountID, year, term) => coursesInTerm(accountID, year, term)
-  .then(courses => courses.map(course => course.split(' ')[2]))
-
-const getID = (accountID, year, term) => getAllCoursesInTerm(accountID, year, term)
-  .then(courses => courses.map(course => course.id))
+const getID = termCourses => termCourses.map(course => course.id)
 
 const getModules = (accountID, year, term) => getAllCoursesInTerm(accountID, year, term)
 

@@ -1,5 +1,6 @@
 const request = require('request-promise')
 const { buildOptions } = require('../util')
+const { getOptions } = require('../options')
 const linkparser = require('parse-link-header')
 
 require('dotenv').config()
@@ -32,7 +33,7 @@ module.exports = {
     fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options)),
   getUsersInCourse: (courseId, ...options) =>
     fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)),
-  getCoursesByUser: (userId, ...options) =>
+  getCoursesByUser: (userId) =>
     fetchAll(canvasDomain + `/users/${userId}/courses`),
   getCustomGradeBookColumns: courseId =>
     fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns?include_hidden=true`),
@@ -43,5 +44,7 @@ module.exports = {
   getAnalytics: accountId =>
     fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`),
   getAssignments: (courseId, ...options) =>
-    fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options))
+    fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options)),
+  getSyllabusOfCourse: courseId =>
+    fetchAll(canvasDomain + `courses/${courseId}?` + getOptions.courses.include.syllabus_body)
 }

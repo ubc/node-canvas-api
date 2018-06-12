@@ -52,5 +52,8 @@ module.exports = {
     fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options)),
   getSyllabusOfCourse: courseId =>
     fetch(canvasDomain + `/courses/${courseId}?` + getOptions.courses.include.syllabus_body)
-      .then(course => course.syllabus_body)
+      .then(course => ({
+        courseId,
+        syllabus: course.syllabus_body
+      }))
 }

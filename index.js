@@ -4,12 +4,5 @@ const get = require('./src/requests/get')
 const put = require('./src/requests/put')
 const options = require('./src/options')
 
-// recipes.getAllCoursesInTerm(15, 2017, 'W2')
-//   .then(courses => courses.map(({ id }) => id))
-//   .then(ids => Promise.all(ids.map(id => get.getSyllabusOfCourse(id))))
-//   .then(syllabi => console.log(syllabi))
-
 recipes.getAllCoursesWithNoSyllabus(15, 2017, 'W2')
   .then(x => console.log(x))
-// get.getSyllabusOfCourse(2503)
-//   .then(x => console.log(x))

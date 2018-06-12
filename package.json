@@ -19,6 +19,7 @@
     "inquirer": "^5.2.0",
     "jest": "^22.4.3",
     "parse-link-header": "^1.0.1",
+    "prompts": "^0.1.8",
     "ramda": "^0.25.0",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"

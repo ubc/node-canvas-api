@@ -10,5 +10,6 @@ module.exports = {
   getAllCoursesInDept: require('./getAllCoursesInDept'),
   getAllCoursesInTerm: require('./getAllCoursesInTerm'),
   hideCustomGradebookColumns: require('./hideCustomGradebookColumns'),
-  showCustomGradebookColumns: require('./showCustomGradebookColumns')
+  showCustomGradebookColumns: require('./showCustomGradebookColumns'),
+  getAllCoursesWithNoSyllabus: require('./getAllCoursesWithNoSyllabus')
 }

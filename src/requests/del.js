@@ -13,7 +13,8 @@ const deleteRequest = (url, body) => request({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-}).then(response => response).catch(err => console.log(err))
+}).then(response => response)
+  .catch(err => console.log(err))
 
 module.exports = {
   deleteCustomGradebookColumn: (courseId, gradebookColumnId) =>

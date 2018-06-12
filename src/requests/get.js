@@ -8,20 +8,25 @@ require('dotenv').config()
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 const token = process.env.CANVAS_API_TOKEN
 
+const requestObj = url => ({
+  'method': 'GET',
+  'uri': url,
+  'json': true,
+  'resolveWithFullResponse': true,
+  'headers': {
+    'Authorization': 'Bearer ' + token
+  }
+})
+
 const fetchAll = (url, result = []) =>
-  request({
-    'method': 'GET',
-    'uri': url,
-    'json': true,
-    'resolveWithFullResponse': true,
-    'headers': {
-      'Authorization': 'Bearer ' + token
-    }
-  }).then(response => {
+  request(requestObj(url)).then(response => {
     result = [...result, ...response.body]
     const links = linkparser(response.headers.link)
     return links.next ? fetchAll(links.next.url, result) : result
   }).catch(err => console.log(err))
+
+const fetch = url => request(requestObj(url))
+  .then(response => response.body)
 
 module.exports = {
   getAccounts: () => fetchAll(canvasDomain + `/accounts`),
@@ -46,5 +51,6 @@ module.exports = {
   getAssignments: (courseId, ...options) =>
     fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options)),
   getSyllabusOfCourse: courseId =>
-    fetchAll(canvasDomain + `courses/${courseId}?` + getOptions.courses.include.syllabus_body)
+    fetch(canvasDomain + `/courses/${courseId}?` + getOptions.courses.include.syllabus_body)
+      .then(course => course.syllabus_body)
 }

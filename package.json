@@ -1,5 +1,5 @@
 {
-  "name": "canvas-api",
+  "name": "node-canvas-api",
   "version": "1.0.0",
   "description": "",
   "main": "api.js",
@@ -7,8 +7,8 @@
     "test": "jest --watch",
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Justin Lee",
+  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
     "bottleneck": "^2.3.0",

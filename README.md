@@ -8,6 +8,8 @@ The Canvas API client exposes many useful "recipes" for automating tedious or ot
 
 These instructions will get you a copy of the project up and running on your local machine for use with your own API tokens and Canvas domains. 
 
+There are two ways to use this package. You can download it as is, and run it that way, or you can import via NPM as a package: `npm i node-canvas-api`.
+
 ### Prerequisites
 
 1. **Install [Node 8.0.0 or greater](https://nodejs.org)**.

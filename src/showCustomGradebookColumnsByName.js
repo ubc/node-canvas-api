@@ -1,7 +1,7 @@
 import { getCustomGradeBookColumns } from './internal/get'
 import { showCustomGradebookColumn } from './internal/put'
 
-const showCustomGradebookColumns = async (courseId, ...gradebookColumnNames) => {
+const showCustomGradebookColumnsByName = async (courseId, ...gradebookColumnNames) => {
   const customGradebookColumns = await getCustomGradeBookColumns(courseId)
   const matchingGradebookColumnID = customGradebookColumns
     .filter(({ title }) => (gradebookColumnNames.includes(title)))
@@ -13,4 +13,4 @@ const showCustomGradebookColumns = async (courseId, ...gradebookColumnNames) => 
   return response
 }
 
-export default showCustomGradebookColumns
+export default showCustomGradebookColumnsByName

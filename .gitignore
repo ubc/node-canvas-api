@@ -62,7 +62,6 @@ typings/
 
 # Custom
 .idea
-dist
 DS_Store
 .vscode
 
@@ -70,3 +69,4 @@ DS_Store
 client_secret.json
 credentials.json
 quickstart.json
+src/

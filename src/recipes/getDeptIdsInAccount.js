@@ -1,4 +1,4 @@
-const { getSubaccounts } = require('../requests/get')
+import { getSubaccounts } from '../requests/get'
 
 const getDeptIdsInAccount = async accountId => {
   const accounts = await getSubaccounts(accountId)
@@ -6,4 +6,4 @@ const getDeptIdsInAccount = async accountId => {
   return deptIds
 }
 
-module.exports = getDeptIdsInAccount
+export default getDeptIdsInAccount

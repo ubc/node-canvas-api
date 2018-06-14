@@ -1,4 +1,4 @@
-const request = require('request-promise')
+import request from 'request-promise'
 
 require('dotenv').config()
 
@@ -15,17 +15,16 @@ const postRequest = (url, body) => request({
   }
 }).then(response => response).catch(err => console.log(err))
 
-module.exports = {
-  createCourse: (accountId, body) =>
-    postRequest(canvasDomain + `/accounts/${accountId}/courses`, body),
-  createCustomGradebookColumn: (courseId, columnTitle, columnPosition) =>
-    postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
-      'column[title]': columnTitle,
-      'column[position]': columnPosition
-    }),
-  courseCopy: (sourceCourseId, targetCourseId) =>
-    postRequest(canvasDomain + `/courses/${targetCourseId}/content_migrations`, {
-      'migration_type': 'course_copy_importer',
-      'settings[source_course_id]': `${sourceCourseId}`
-    })
+export function createCourse (accountId, body) { return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body) }
+export function createCustomGradebookColumn (courseId, columnTitle, columnPosition) {
+  return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
+    'column[title]': columnTitle,
+    'column[position]': columnPosition
+  })
+}
+export function courseCopy (sourceCourseId, targetCourseId) {
+  return postRequest(canvasDomain + `/courses/${targetCourseId}/content_migrations`, {
+    'migration_type': 'course_copy_importer',
+    'settings[source_course_id]': `${sourceCourseId}`
+  })
 }

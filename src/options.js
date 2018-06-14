@@ -1,4 +1,4 @@
-module.exports.getOptions = {
+export const getOptions = {
   users: {
     search: term => `search_term=${encodeURIComponent(term)}`,
     sort: {

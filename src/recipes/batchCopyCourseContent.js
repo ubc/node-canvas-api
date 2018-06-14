@@ -1,4 +1,4 @@
-const copyCourseContent = require('./copyCourseContent')
+import copyCourseContent from './copyCourseContent'
 
 const batchCopyCourseContent = async listOfSourceAndTargetCourseIds => {
   const listOfProgress = listOfSourceAndTargetCourseIds
@@ -7,4 +7,4 @@ const batchCopyCourseContent = async listOfSourceAndTargetCourseIds => {
   return listOfProgress
 }
 
-module.exports = batchCopyCourseContent
+export default batchCopyCourseContent

@@ -1,5 +1,5 @@
-const { getUsersInCourse } = require('../requests/get')
-const { getOptions } = require('../options')
+import { getUsersInCourse } from '../requests/get'
+import { getOptions } from '../options'
 
 const getStudentNamesFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId,
@@ -54,7 +54,7 @@ const getStudentNumbersAndEmailsFromCourse = async courseId => {
   return studentNumbersAndEmails
 }
 
-module.exports = {
+export default {
   getStudentNamesFromCourse,
   getStudentEmailsFromCourse,
   getStudentNumbersFromCourse,

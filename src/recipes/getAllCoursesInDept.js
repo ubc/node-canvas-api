@@ -1,6 +1,6 @@
-const getDeptIdsInAccount = require('./getDeptIdsInAccount')
-const { getOptions } = require('../options')
-const { getCourses } = require('../requests/get')
+import getDeptIdsInAccount from './getDeptIdsInAccount'
+import { getOptions } from '../options'
+import { getCourses } from '../requests/get'
 
 const getAllCoursesInDept = async (accountId, deptName) => {
   const deptIds = await getDeptIdsInAccount(accountId)
@@ -9,4 +9,4 @@ const getAllCoursesInDept = async (accountId, deptName) => {
   return coursesInDept
 }
 
-module.exports = getAllCoursesInDept
+export default getAllCoursesInDept

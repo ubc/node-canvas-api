@@ -1,6 +1,6 @@
-const { getSubaccounts, getCourses } = require('../requests/get')
-const { getOptions } = require('../options')
-const { flatten } = require('ramda')
+import { getSubaccounts, getCourses } from '../requests/get'
+import { getOptions } from '../options'
+import { flatten } from 'ramda'
 
 const getAllCoursesInAccount = async (accountId, ...options) => {
   const accounts = await getSubaccounts(accountId)
@@ -10,4 +10,4 @@ const getAllCoursesInAccount = async (accountId, ...options) => {
   return flatten(courses)
 }
 
-module.exports = getAllCoursesInAccount
+export default getAllCoursesInAccount

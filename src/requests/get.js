@@ -1,7 +1,7 @@
-const request = require('request-promise')
-const { buildOptions } = require('../util')
-const { getOptions } = require('../options')
-const linkparser = require('parse-link-header')
+import request from 'request-promise'
+import { buildOptions } from '../util'
+import { getOptions } from '../options'
+import linkparser from 'parse-link-header'
 
 require('dotenv').config()
 
@@ -29,33 +29,22 @@ const fetchAll = (url, result = []) =>
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
 
-module.exports = {
-  getAccounts: () => fetchAll(canvasDomain + `/accounts`),
-  getSubaccounts: accountId =>
-    fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`),
-  getUsersInAccount: accountId =>
-    fetchAll(canvasDomain + `/accounts/${accountId}/users?`),
-  getCourses: (deptId, ...options) =>
-    fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options)),
-  getUsersInCourse: (courseId, ...options) =>
-    fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)),
-  getCoursesByUser: (userId) =>
-    fetchAll(canvasDomain + `/users/${userId}/courses`),
-  getCustomGradeBookColumns: courseId =>
-    fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns?include_hidden=true`),
-  getProgress: id =>
-    fetchAll(canvasDomain + `/progress/${id}`),
-  getUserPageViews: userId =>
-    fetchAll(canvasDomain + `/users/${userId}/page_views`),
-  getAnalytics: accountId =>
-    fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`),
-  getAssignments: (courseId, ...options) =>
-    fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options)),
-  getSyllabusOfCourse: courseId =>
-    fetch(canvasDomain + `/courses/${courseId}?` + getOptions.courses.include.syllabus_body)
-      .then(course => ({
-        courseCode: course.course_code,
-        courseId,
-        syllabus: course.syllabus_body
-      }))
+export function getAccounts () { return fetchAll(canvasDomain + `/accounts`) }
+export function getSubaccounts (accountId) { return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`) }
+export function getUsersInAccount (accountId) { return fetchAll(canvasDomain + `/accounts/${accountId}/users?`) }
+export function getCourses (deptId, ...options) { return fetchAll(canvasDomain + `/accounts/${deptId}/courses?` + buildOptions(options)) }
+export function getUsersInCourse (courseId, ...options) { return fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options)) }
+export function getCoursesByUser (userId) { return fetchAll(canvasDomain + `/users/${userId}/courses`) }
+export function getCustomGradeBookColumns (courseId) { return fetchAll(canvasDomain + `/courses/${courseId}/custom_gradebook_columns?include_hidden=true`) }
+export function getProgress (id) { return fetchAll(canvasDomain + `/progress/${id}`) }
+export function getUserPageViews (userId) { return fetchAll(canvasDomain + `/users/${userId}/page_views`) }
+export function getAnalytics (accountId) { return fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`) }
+export function getAssignments (courseId, ...options) { return fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options)) }
+export function getSyllabusOfCourse (courseId) {
+  return fetch(canvasDomain + `/courses/${courseId}?` + getOptions.courses.include.syllabus_body)
+    .then(course => ({
+      courseCode: course.course_code,
+      courseId,
+      syllabus: course.syllabus_body
+    }))
 }

@@ -1,4 +1,4 @@
-const { getAccounts } = require('../requests/get')
+import { getAccounts } from '../requests/get'
 
 const getAccountIds = async () => {
   const accounts = await getAccounts()
@@ -6,4 +6,4 @@ const getAccountIds = async () => {
   return ids
 }
 
-module.exports = getAccountIds
+export default getAccountIds

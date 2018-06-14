@@ -1,6 +1,6 @@
-const { getOptions } = require('../options')
-const { getUsersInCourse } = require('../requests/get')
-const { putStudentNumberInGradeColumn } = require('../requests/put')
+import { getOptions } from '../options'
+import { getUsersInCourse } from '../requests/get'
+import { putStudentNumberInGradeColumn } from '../requests/put'
 
 const putStudentNumbersInExistingGradebook = async (courseId, customGradeBookId) => {
   const studentObjs = await getUsersInCourse(courseId, getOptions.users.enrollmentType.student)
@@ -11,4 +11,4 @@ const putStudentNumbersInExistingGradebook = async (courseId, customGradeBookId)
   return customGradebookResponse
 }
 
-module.exports = putStudentNumbersInExistingGradebook
+export default putStudentNumbersInExistingGradebook

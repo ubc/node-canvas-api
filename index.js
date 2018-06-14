@@ -1,12 +1,12 @@
-const recipes = require('./src/recipes/index')
-const requests = require('./src/requests/index')
-const post = require('./src/requests/post')
-const get = require('./src/requests/get')
-const del = require('./src/requests/del')
-const put = require('./src/requests/put')
-const options = require('./src/options')
+import recipes from './src/recipes/index'
+import requests from './src/requests/index'
+import post from './src/requests/post'
+import get from './src/requests/get'
+import del from './src/requests/del'
+import put from './src/requests/put'
+import options from './src/options'
 
-module.exports = {
+export default {
   recipes,
   requests,
   get,

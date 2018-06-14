@@ -1,5 +1,5 @@
-const { getCustomGradeBookColumns } = require('../requests/get')
-const { deleteCustomGradebookColumn } = require('../requests/del')
+import { getCustomGradeBookColumns } from '../requests/get'
+import { deleteCustomGradebookColumn } from '../requests/del'
 
 const deleteAllCustomGradebookColumns = async courseId => {
   const allCustomGradebookColumns = await getCustomGradeBookColumns(courseId)
@@ -7,4 +7,4 @@ const deleteAllCustomGradebookColumns = async courseId => {
   return deleteAll
 }
 
-module.exports = deleteAllCustomGradebookColumns
+export default deleteAllCustomGradebookColumns

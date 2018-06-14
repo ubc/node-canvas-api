@@ -1,5 +1,5 @@
-const { getCustomGradeBookColumns } = require('../requests/get')
-const { showCustomGradebookColumn } = require('../requests/put')
+import { getCustomGradeBookColumns } from '../requests/get'
+import { showCustomGradebookColumn } from '../requests/put'
 
 const showCustomGradebookColumns = async (courseId, ...gradebookColumnNames) => {
   const customGradebookColumns = await getCustomGradeBookColumns(courseId)
@@ -13,4 +13,4 @@ const showCustomGradebookColumns = async (courseId, ...gradebookColumnNames) => 
   return response
 }
 
-module.exports = showCustomGradebookColumns
+export default showCustomGradebookColumns

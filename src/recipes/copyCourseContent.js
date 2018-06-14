@@ -1,5 +1,5 @@
-const { courseCopy } = require('../requests/post')
-const { getProgress } = require('../requests/get')
+import { courseCopy } from '../requests/post'
+import { getProgress } from '../requests/get'
 
 const copyCourseContent = async (sourceCourseId, targetCourseId) => {
   const contentMigration = await courseCopy(sourceCourseId, targetCourseId)
@@ -8,4 +8,4 @@ const copyCourseContent = async (sourceCourseId, targetCourseId) => {
   return progress
 }
 
-module.exports = copyCourseContent
+export default copyCourseContent

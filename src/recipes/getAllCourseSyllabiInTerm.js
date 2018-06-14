@@ -1,5 +1,5 @@
-const getAllCoursesInTerm = require('./getAllCoursesInTerm')
-const get = require('../requests/get')
+import getAllCoursesInTerm from './getAllCoursesInTerm'
+import { getSyllabusOfCourse } from '../requests/get'
 
 /**
  * Returns the syllabi of all courses contained under an Account, for the specified year/term.
@@ -14,9 +14,9 @@ const getAllCourseSyllabiInTerm = async (accountId, year, term) => {
   const courses = await getAllCoursesInTerm(accountId, year, term)
   const ids = courses.map(({ id }) => id)
   const syllabi = await Promise.all(
-    ids.map(id => get.getSyllabusOfCourse(id))
+    ids.map(id => getSyllabusOfCourse(id))
   )
   return syllabi
 }
 
-module.exports = getAllCourseSyllabiInTerm
+export default getAllCourseSyllabiInTerm

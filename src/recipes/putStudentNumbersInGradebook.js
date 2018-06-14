@@ -1,7 +1,7 @@
-const { getOptions } = require('../options')
-const { getUsersInCourse } = require('../requests/get')
-const { createCustomGradebookColumn } = require('../requests/post')
-const { putStudentNumberInGradeColumn } = require('../requests/put')
+import { getOptions } from '../options'
+import { getUsersInCourse } from '../requests/get'
+import { createCustomGradebookColumn } from '../requests/post'
+import { putStudentNumberInGradeColumn } from '../requests/put'
 
 const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPosition = 1) => {
   const customGradeBook = await createCustomGradebookColumn(courseId, columnTitle, columnPosition)
@@ -14,4 +14,4 @@ const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPositio
   return customGradebookResponse
 }
 
-module.exports = putStudentNumbersInGradebook
+export default putStudentNumbersInGradebook

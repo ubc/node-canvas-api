@@ -1,4 +1,4 @@
-const request = require('request-promise')
+import request from 'request-promise'
 
 require('dotenv').config()
 
@@ -15,15 +15,14 @@ const putRequest = (url, body) => request({
   }
 }).then(response => response).catch(err => console.log(err.message, err.options.form, err.options.uri))
 
-module.exports = {
-  putStudentNumberInGradeColumn: (courseId, gradebookColumnId, studentId, body) =>
-    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body),
-  hideCustomGradebookColumn: (courseId, columnId) =>
-    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
-      'column[hidden]': true
-    }),
-  showCustomGradebookColumn: (courseId, columnId) =>
-    putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
-      'column[hidden]': false
-    })
+export function putStudentNumberInGradeColumn (courseId, gradebookColumnId, studentId, body) { return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body) }
+export function hideCustomGradebookColumn (courseId, columnId) {
+  return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
+    'column[hidden]': true
+  })
+}
+export function showCustomGradebookColumn (courseId, columnId) {
+  return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
+    'column[hidden]': false
+  })
 }

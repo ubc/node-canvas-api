@@ -1,4 +1,4 @@
-const request = require('request-promise')
+import request from 'request-promise'
 
 require('dotenv').config()
 
@@ -16,7 +16,6 @@ const deleteRequest = (url, body) => request({
 }).then(response => response)
   .catch(err => console.log(err))
 
-module.exports = {
-  deleteCustomGradebookColumn: (courseId, gradebookColumnId) =>
-    deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
+export function deleteCustomGradebookColumn (courseId, gradebookColumnId) {
+  return deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
 }

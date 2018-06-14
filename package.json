@@ -1,14 +1,16 @@
 {
   "name": "node-canvas-api",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "dist/node-canvas-api.js",
+  "module": "es/index.js",
   "scripts": {
     "test": "jest --watch",
-    "start": "node index.js",
     "build:umd": "NODE_ENV=development rollup -c -o dist/node-canvas-api.js",
     "build:umd:min": "NODE_ENV=production rollup -c -o dist/node-canvas-api.min.js",
-    "build": "npm run build:umd:min && npm run build:umd"
+    "build:cjs": "cross-env BABEL_ENV=cjs babel source --out-dir src",
+    "build": "npm run build:umd:min && npm run build:umd && npm run build:cjs",
+    "clean": "rimraf src/* dist/*"
   },
   "author": "Justin Lee",
   "license": "MIT",
@@ -27,6 +29,9 @@
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-json": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-terser": "^1.0.1"
+    "rollup-plugin-terser": "^1.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "cross-env": "^5.2.0"
   }
 }

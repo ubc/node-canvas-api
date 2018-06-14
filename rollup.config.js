@@ -4,7 +4,7 @@ const commonjs = require('rollup-plugin-commonjs')
 const json = require('rollup-plugin-json')
 
 const config = {
-  input: 'index.js',
+  input: './source/index.js',
   output: {
     format: 'umd',
     name: 'node-canvas-api'

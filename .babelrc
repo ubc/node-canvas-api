@@ -1,0 +1,9 @@
+{
+  "env": {
+    "cjs": {
+      "plugins": [
+        "./scripts/esm-to-cjs"
+      ]
+    }
+  }
+}

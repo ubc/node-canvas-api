@@ -1,6 +1,6 @@
 import getSubaccounts from './getSubaccounts'
 import getCourses from './getCourses'
-import getOptions from './internal/options'
+import getOptions from './internal/getOptions'
 import R from 'ramda'
 
 const getAllCoursesInAccount = async (accountId, ...options) => {

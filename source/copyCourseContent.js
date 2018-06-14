@@ -1,6 +1,14 @@
 import courseCopy from './courseCopy'
 import getProgress from './getProgress'
 
+/**
+ * Initiates course copy.
+ * @param {Number} sourceCourseId the course ID of the source course.
+ * @param {Number} targetCourseId the course ID of the target course.
+ * @return {Promise} A promise that resolves to a progress ID that can be used to look up progress
+ * of copy
+ */
+
 const copyCourseContent = async (sourceCourseId, targetCourseId) => {
   const contentMigration = await courseCopy(sourceCourseId, targetCourseId)
   const progress = getProgress(contentMigration.id)

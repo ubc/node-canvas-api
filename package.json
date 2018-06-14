@@ -1,8 +1,8 @@
 {
   "name": "node-canvas-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --watch",
     "start": "node index.js",

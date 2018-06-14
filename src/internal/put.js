@@ -15,6 +15,8 @@ const putRequest = (url, body) => request({
   }
 }).then(response => response).catch(err => console.log(err.message, err.options.form, err.options.uri))
 
+export { putRequest, canvasDomain, token }
+
 export function putStudentNumberInGradeColumn (courseId, gradebookColumnId, studentId, body) { return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body) }
 export function hideCustomGradebookColumn (courseId, columnId) {
   return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {

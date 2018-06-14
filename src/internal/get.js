@@ -3,6 +3,7 @@ import linkparser from 'parse-link-header'
 
 require('dotenv').config()
 
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 const token = process.env.CANVAS_API_TOKEN
 
 const requestObj = url => ({
@@ -26,4 +27,4 @@ const fetchAll = (url, result = []) =>
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
 
-export { fetchAll, fetch }
+export { fetchAll, fetch, token, canvasDomain }

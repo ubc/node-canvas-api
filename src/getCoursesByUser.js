@@ -1,5 +1,5 @@
 import { fetchAll, canvasDomain } from './internal/get'
 
-export function getCoursesByUser (userId) {
+export default function getCoursesByUser (userId) {
   return fetchAll(canvasDomain + `/users/${userId}/courses`)
 }

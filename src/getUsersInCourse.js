@@ -1,6 +1,6 @@
 import { fetchAll, canvasDomain } from './internal/get'
-import { buildOptions } from './internal/util'
+import buildOptions from './internal/util'
 
-export function getUsersInCourse (courseId, ...options) {
+export default function getUsersInCourse (courseId, ...options) {
   return fetchAll(canvasDomain + `/courses/${courseId}/users?` + buildOptions(options))
 }

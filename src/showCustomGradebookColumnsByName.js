@@ -1,5 +1,5 @@
-import { getCustomGradeBookColumns } from './internal/get'
-import { showCustomGradebookColumn } from './internal/put'
+import getCustomGradeBookColumns from './getCustomGradeBookColumns'
+import showCustomGradebookColumn from './showCustomGradebookColumn'
 
 const showCustomGradebookColumnsByName = async (courseId, ...gradebookColumnNames) => {
   const customGradebookColumns = await getCustomGradeBookColumns(courseId)

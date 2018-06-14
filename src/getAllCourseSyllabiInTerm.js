@@ -1,5 +1,5 @@
 import getAllCoursesInTerm from './getAllCoursesInTerm'
-import { getSyllabusOfCourse } from './internal/get'
+import getSyllabusOfCourse from './getSyllabusOfCourse'
 
 /**
  * Returns the syllabi of all courses contained under an Account, for the specified year/term.

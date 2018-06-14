@@ -3,6 +3,7 @@ export default {
   output: {
     file: 'dist/node-canvas-api.js',
     format: 'umd',
-    exports: 'named'
+    exports: 'named',
+    name: 'node-canvas-api'
   }
 }

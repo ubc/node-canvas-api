@@ -1,4 +1,4 @@
-import { getAccounts } from './getAccounts'
+import getAccounts from './getAccounts'
 
 const getAccountIds = async () => {
   const accounts = await getAccounts()

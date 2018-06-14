@@ -1,7 +1,7 @@
 import { getOptions } from './internal/options'
-import { getUsersInCourse } from './internal/get'
-import { createCustomGradebookColumn } from './internal/post'
-import { putStudentNumberInGradeColumn } from './internal/put'
+import getUsersInCourse from './getUsersInCourse'
+import createCustomGradebookColumn from './createCustomGradebookColumn'
+import putStudentNumberInGradeColumn from './putStudentNumberInGradeColumn'
 
 const putStudentNumbersInGradebook = async (courseId, columnTitle, columnPosition = 1) => {
   const customGradeBook = await createCustomGradebookColumn(courseId, columnTitle, columnPosition)

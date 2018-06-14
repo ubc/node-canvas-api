@@ -1,5 +1,5 @@
 import { fetchAll, canvasDomain } from './internal/get'
 
-export function getSubaccounts (accountId) {
+export default function getSubaccounts (accountId) {
   return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`)
 }

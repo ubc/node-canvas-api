@@ -1,6 +1,6 @@
 /* global describe, it */
 const assert = require('assert')
-const { buildOptions } = require('../src/util')
+const buildOptions = require('../src/util')
 
 describe('buildOptions', () => {
   it('returns an empty string if the array passed to it is empty', () => {

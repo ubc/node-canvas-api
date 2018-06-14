@@ -27,4 +27,4 @@ const fetchAll = (url, result = []) =>
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
 
-export { fetchAll, fetch, token, canvasDomain }
+export { fetchAll, fetch, canvasDomain }

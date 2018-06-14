@@ -5,7 +5,8 @@
   "main": "api.js",
   "scripts": {
     "test": "jest --watch",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "rollup -c"
   },
   "author": "Justin Lee",
   "license": "MIT",

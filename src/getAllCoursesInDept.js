@@ -1,6 +1,6 @@
 import getDeptIdsInAccount from './getDeptIdsInAccount'
-import { getOptions } from '../options'
-import { getCourses } from '../requests/get'
+import { getOptions } from './internal/options'
+import { getCourses } from './interal/get'
 
 const getAllCoursesInDept = async (accountId, deptName) => {
   const deptIds = await getDeptIdsInAccount(accountId)

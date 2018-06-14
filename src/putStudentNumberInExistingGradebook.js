@@ -1,6 +1,6 @@
-import { getOptions } from '../options'
-import { getUsersInCourse } from '../requests/get'
-import { putStudentNumberInGradeColumn } from '../requests/put'
+import { getOptions } from './internal/options'
+import { getUsersInCourse } from './internal/get'
+import { putStudentNumberInGradeColumn } from './internal/put'
 
 const putStudentNumbersInExistingGradebook = async (courseId, customGradeBookId) => {
   const studentObjs = await getUsersInCourse(courseId, getOptions.users.enrollmentType.student)

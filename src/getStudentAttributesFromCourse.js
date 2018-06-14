@@ -1,5 +1,5 @@
-import { getUsersInCourse } from '../requests/get'
-import { getOptions } from '../options'
+import { getUsersInCourse } from './internal/get'
+import { getOptions } from './internal/options'
 
 const getStudentNamesFromCourse = async courseId => {
   const studentObjs = await getUsersInCourse(courseId,

@@ -1,4 +1,4 @@
-import { getCustomGradeBookColumns } from '../requests/get'
+import { getCustomGradeBookColumns } from './internal/get'
 import { deleteCustomGradebookColumn } from '../requests/del'
 
 const deleteAllCustomGradebookColumns = async courseId => {

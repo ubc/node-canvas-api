@@ -1,5 +1,5 @@
-import { getSubaccounts, getCourses } from '../requests/get'
-import { getOptions } from '../options'
+import { getSubaccounts, getCourses } from './internal/get'
+import { getOptions } from './internal/options'
 import { flatten } from 'ramda'
 
 const getAllCoursesInAccount = async (accountId, ...options) => {

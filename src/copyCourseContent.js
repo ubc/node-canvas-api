@@ -1,5 +1,5 @@
-import { courseCopy } from '../requests/post'
-import { getProgress } from '../requests/get'
+import { courseCopy } from './internal/post'
+import { getProgress } from './internal/get'
 
 const copyCourseContent = async (sourceCourseId, targetCourseId) => {
   const contentMigration = await courseCopy(sourceCourseId, targetCourseId)

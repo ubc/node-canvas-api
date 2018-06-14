@@ -1,6 +1,6 @@
 import request from 'request-promise'
 import { buildOptions } from '../util'
-import { getOptions } from '../options'
+import { getOptions } from './internal/get'
 import linkparser from 'parse-link-header'
 
 require('dotenv').config()
@@ -28,6 +28,8 @@ const fetchAll = (url, result = []) =>
 
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
+
+export { fetchAll, fetch }
 
 export function getAccounts () { return fetchAll(canvasDomain + `/accounts`) }
 export function getSubaccounts (accountId) { return fetchAll(canvasDomain + `/accounts/${accountId}/sub_accounts?`) }

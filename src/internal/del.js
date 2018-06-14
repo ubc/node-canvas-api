@@ -16,6 +16,8 @@ const deleteRequest = (url, body) => request({
 }).then(response => response)
   .catch(err => console.log(err))
 
+export { deleteRequest, canvasDomain }
+
 export function deleteCustomGradebookColumn (courseId, gradebookColumnId) {
   return deleteRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}`)
 }

@@ -1,4 +1,4 @@
-import getOptions from './internal/options'
+import getOptions from './internal/getOptions'
 import getUsersInCourse from './getUsersInCourse'
 import putStudentNumberInGradeColumn from './putStudentNumberInGradeColumn'
 

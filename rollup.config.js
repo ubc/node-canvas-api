@@ -1,12 +1,11 @@
-import uglify from 'rollup-plugin-uglify'
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import json from 'rollup-plugin-json'
+const { terser } = require('rollup-plugin-terser')
+const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs')
+const json = require('rollup-plugin-json')
 
-const config =  {
+const config = {
   input: 'index.js',
   output: {
-    file: 'dist/node-canvas-api.js',
     format: 'umd',
     name: 'node-canvas-api'
   },
@@ -21,7 +20,7 @@ const config =  {
 
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
-    uglify({
+    terser({
       compress: {
         pure_getters: true,
         unsafe: true,
@@ -32,4 +31,4 @@ if (process.env.NODE_ENV === 'production') {
   )
 }
 
-export default config
+module.exports = config

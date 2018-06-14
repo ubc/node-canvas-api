@@ -15,6 +15,8 @@ const postRequest = (url, body) => request({
   }
 }).then(response => response).catch(err => console.log(err))
 
+export { postRequest, canvasDomain }
+
 export function createCourse (accountId, body) { return postRequest(canvasDomain + `/accounts/${accountId}/courses`, body) }
 export function createCustomGradebookColumn (courseId, columnTitle, columnPosition) {
   return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {

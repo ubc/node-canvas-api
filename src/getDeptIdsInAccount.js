@@ -1,4 +1,4 @@
-import { getSubaccounts } from './internal/get'
+import { getSubaccounts } from './getSubaccounts'
 
 const getDeptIdsInAccount = async accountId => {
   const accounts = await getSubaccounts(accountId)

@@ -1,5 +1,5 @@
-import { getCustomGradeBookColumns } from './internal/get'
-import { deleteCustomGradebookColumn } from '../requests/del'
+import { getCustomGradeBookColumns } from './getCustomGradeBookColumns'
+import { deleteCustomGradebookColumn } from './deleteCustomGradebookColumn'
 
 const deleteAllCustomGradebookColumns = async courseId => {
   const allCustomGradebookColumns = await getCustomGradeBookColumns(courseId)

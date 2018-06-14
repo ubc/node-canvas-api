@@ -54,7 +54,7 @@ const getStudentNumbersAndEmailsFromCourse = async courseId => {
   return studentNumbersAndEmails
 }
 
-export default {
+export {
   getStudentNamesFromCourse,
   getStudentEmailsFromCourse,
   getStudentNumbersFromCourse,

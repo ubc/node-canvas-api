@@ -1,4 +1,5 @@
-import { getSubaccounts, getCourses } from './internal/get'
+import { getSubaccounts } from './getSubaccounts'
+import { getCourses } from './getCourses'
 import { getOptions } from './internal/options'
 import { flatten } from 'ramda'
 

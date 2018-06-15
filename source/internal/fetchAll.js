@@ -23,7 +23,4 @@ const fetchAll = (url, result = []) =>
       return links.next ? fetchAll(links.next.url, result) : result
     }).catch(err => console.log(err))
 
-const fetch = url => request(requestObj(url))
-  .then(response => response.body)
-
 export default fetchAll

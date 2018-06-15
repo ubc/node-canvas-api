@@ -70,3 +70,4 @@ client_secret.json
 credentials.json
 quickstart.json
 src/
+test.js

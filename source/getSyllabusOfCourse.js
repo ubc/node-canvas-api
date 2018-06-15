@@ -1,5 +1,5 @@
 import getOptions from './internal/getOptions'
-import fetch from './internal/fetchAll'
+import fetch from './internal/fetch'
 
 require('dotenv').config()
 

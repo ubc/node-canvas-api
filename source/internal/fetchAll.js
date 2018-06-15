@@ -29,6 +29,6 @@ const fetchAll = (url, result = []) =>
       return links.next ? fetchAll(links.next.url, result) : result
     }).catch(err => console.log(err))
 
-const fetchAllRateLimited = limiter(fetchAll)
+const fetchAllRateLimited = limiter.wrap(fetchAll)
 
 export default fetchAllRateLimited

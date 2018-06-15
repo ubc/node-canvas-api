@@ -23,6 +23,6 @@ const requestObj = url => ({
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
 
-const fetchRateLimited = limiter(fetch)
+const fetchRateLimited = limiter.wrap(fetch)
 
 export default fetchRateLimited

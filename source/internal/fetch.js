@@ -1,8 +1,14 @@
 import request from 'request-promise'
+import Bottleneck from 'bottleneck'
 
 require('dotenv').config()
 
 const token = process.env.CANVAS_API_TOKEN
+
+const limiter = new Bottleneck({
+  maxConcurrent: 20,
+  minTime: 100
+})
 
 const requestObj = url => ({
   'method': 'GET',
@@ -17,4 +23,6 @@ const requestObj = url => ({
 const fetch = url => request(requestObj(url))
   .then(response => response.body)
 
-export default fetch
+const fetchRateLimited = limiter(fetch)
+
+export default fetchRateLimited

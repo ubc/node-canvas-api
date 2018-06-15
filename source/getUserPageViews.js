@@ -1,5 +1,7 @@
 import fetchAll from './internal/fetchAll'
 
+require('dotenv').config()
+
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**

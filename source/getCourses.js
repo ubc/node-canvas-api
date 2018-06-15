@@ -1,6 +1,8 @@
 import fetchAll from './internal/fetchAll'
 import buildOptions from './internal/util'
 
+require('dotenv').config()
+
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**

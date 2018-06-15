@@ -1,5 +1,7 @@
 import deleteRequest from './internal/del'
 
+require('dotenv').config()
+
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**

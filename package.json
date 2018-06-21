@@ -1,7 +1,7 @@
 {
   "name": "node-canvas-api",
-  "version": "1.1.32",
-  "description": "",
+  "version": "1.1.33",
+  "description": "Canvas API for Node",
   "main": "src/index.js",
   "module": "es/index.js",
   "scripts": {

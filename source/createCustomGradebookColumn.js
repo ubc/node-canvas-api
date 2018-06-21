@@ -5,7 +5,7 @@ require('dotenv').config()
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
- * Creates course
+ * Creates custom gradebook column
  * @param {Number} courseId the course ID of the target course.
  * @param {String} columnTitle the title of the custom column.
  * @param {Number} columnPosition the position of the column, starting from left to right, indexed at 1.

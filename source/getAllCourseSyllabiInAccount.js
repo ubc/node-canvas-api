@@ -1,4 +1,4 @@
-import getAllCoursesInTerm from './getAllCoursesInTerm'
+import getAllCoursesInAccount from './getAllCoursesInAccount'
 import getSyllabusOfCourse from './getSyllabusOfCourse'
 
 /**
@@ -10,8 +10,8 @@ import getSyllabusOfCourse from './getSyllabusOfCourse'
  * @return {Promise} A promise that resolves to an array of course objects, with syllabus
  */
 
-const getAllCourseSyllabiInTerm = async (accountId, year, term) => {
-  const courses = await getAllCoursesInTerm(accountId, year, term)
+const getAllCourseSyllabiInAccount = async (accountId) => {
+  const courses = await getAllCoursesInAccount(accountId)
   const ids = courses.map(({ id }) => id)
   const syllabi = await Promise.all(
     ids.map(id => getSyllabusOfCourse(id))
@@ -19,4 +19,4 @@ const getAllCourseSyllabiInTerm = async (accountId, year, term) => {
   return syllabi
 }
 
-export default getAllCourseSyllabiInTerm
+export default getAllCourseSyllabiInAccount

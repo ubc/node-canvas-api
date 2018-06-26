@@ -20,6 +20,10 @@ const downloadFile = (fileId, path) => getFile(fileId, path)
   .then(({ url, filename }) => {
     const pdfStream = fs.createWriteStream(path + filename)
     request(requestObj(url)).pipe(pdfStream)
+    return new Promise((resolve, reject) => {
+      pdfStream.on('finish', () => resolve(`${filename} File downloaded`))
+      pdfStream.on('error', err => reject(err))
+    })
   })
 
 export default downloadFile

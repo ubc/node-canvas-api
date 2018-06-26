@@ -25,6 +25,9 @@ const canvasAPI = require('node-canvas-api');
 ```
 
 Attached to the `canvasAPI` are a bunch of functions.  
+Add a `.env` file to the root of your directory with `CANVAS_API_TOKEN=` and your token and `CANVAS_API_DOMAIN=` and your Canvas domain + `/api/v1`. For example, `https://ubc.canvas.ca/api/v1`
+
+Run the attached functions!
 
 ## Authors
 

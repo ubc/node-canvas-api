@@ -17,8 +17,8 @@ const requestObj = url => ({
 })
 
 const downloadFile = (fileId, path) => getFile(fileId, path)
-  .then(({ url }) => {
-    const pdfStream = fs.createWriteStream(path)
+  .then(({ url, filename }) => {
+    const pdfStream = fs.createWriteStream(path + filename)
     request(requestObj(url)).pipe(pdfStream)
   })
 

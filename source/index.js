@@ -29,4 +29,5 @@ export { default as putStudentNumberInGradeColumn } from './putStudentNumberInGr
 export { default as putStudentNumbersInGradebook } from './putStudentNumbersInGradebook'
 export { default as showCustomGradebookColumn } from './showCustomGradebookColumn'
 export { default as showCustomGradebookColumnsByName } from './showCustomGradebookColumnsByName'
+export { default as checkProgressStatus } from './checkProgressStatus'
 export { default as getOptions } from './internal/getOptions'

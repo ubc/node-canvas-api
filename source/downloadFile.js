@@ -23,14 +23,15 @@ const requestObj = url => ({
  * @return {Promise} A Promise that resolves to a log that inidicated what the filename of the downloaded file is. On error, logs the error
  */
 
-const downloadFile = (fileId, path) => getFile(fileId, path)
-  .then(({ url, filename }) => {
-    const pdfStream = fs.createWriteStream(path + filename)
-    request(requestObj(url)).pipe(pdfStream)
-    return new Promise((resolve, reject) => {
-      pdfStream.on('finish', () => resolve(`${filename}`))
-      pdfStream.on('error', err => reject(err))
+const downloadFile = (fileId, path) =>
+  getFile(fileId, path)
+    .then(({ url, filename }) => {
+      const pdfStream = fs.createWriteStream(path + filename)
+      request(requestObj(url)).pipe(pdfStream)
+      return new Promise((resolve, reject) => {
+        pdfStream.on('finish', () => resolve(`${filename}`))
+        pdfStream.on('error', err => reject(err))
+      })
     })
-  })
 
 export default downloadFile

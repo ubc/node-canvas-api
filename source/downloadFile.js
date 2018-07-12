@@ -26,7 +26,7 @@ const requestObj = url => ({
 const downloadFile = (fileId, path) =>
   getFile(fileId, path)
     .then(({ url, filename }) => {
-      const modifiedName = filename.replace('%28', '(').replace('%29', ')')
+      const modifiedName = filename.replace('%28', '(').replace('%29', ')').replace('%E2%80%93', '-')
       const pdfStream = fs.createWriteStream(path + modifiedName)
       request(requestObj(url)).pipe(pdfStream)
       return new Promise((resolve, reject) => {

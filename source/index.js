@@ -31,3 +31,4 @@ export { default as showCustomGradebookColumn } from './showCustomGradebookColum
 export { default as showCustomGradebookColumnsByName } from './showCustomGradebookColumnsByName'
 export { default as checkProgressStatus } from './checkProgressStatus'
 export { default as getOptions } from './internal/getOptions'
+export { default as getUser } from './internal/getUser'

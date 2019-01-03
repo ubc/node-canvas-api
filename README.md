@@ -35,7 +35,7 @@ Run the attached functions!
 ## Authors
 
 * **Justin Lee** 
-https://github.com/justin0022 | justinlee0022@gmail.com
+https://github.com/justin0022 | justin.lee@ubc.ca
 
 ## License
 

@@ -74,6 +74,9 @@ const getOptions = {
     published: 'published=true',
     completed: 'completed=true',
     blueprint: 'blueprint=true'
+  },
+  submissions: {
+    rubric_assessment: 'include[]=rubric_assessment'
   }
 }
 

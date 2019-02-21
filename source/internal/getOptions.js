@@ -28,7 +28,8 @@ const getOptions = {
       bio: 'include[]=bio',
       custom_links: 'include[]=custom_links',
       current_grading_period_scores: 'include[]=current_grading_period_scores',
-      term: 'include[]=term'
+      term: 'include[]=term',
+      students: 'include[]=students'
     },
     userIds: id => `user_ids[]=${encodeURIComponent(id)}`,
     enrollmentState: {

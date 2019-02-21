@@ -15,5 +15,5 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  */
 
 export default function getRubric (courseId, rubricId, ...options) {
-  return fetch(canvasDomain + `/courses/${courseId}/rubrics/${rubricId}?` + buildOptions([getOptions.rubric.graded_assessments, options]))
+  return fetch(canvasDomain + `/courses/${courseId}/rubrics/${rubricId}?` + buildOptions([getOptions.rubric.graded_assessments, getOptions.rubric.data_assessment, options]))
 }

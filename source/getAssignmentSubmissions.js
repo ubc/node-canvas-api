@@ -13,5 +13,5 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  */
 
 export default function getAssignmentSubmissions(courseId, assignmentId, ...options) {
-  return fetchAll(canvasDomain + `/courses/${courseId}/assignments/${assignmentId}/submissions?` + buildOptions([getOptions.submissions.rubric_assessment, options]))
+  return fetchAll(canvasDomain + `/courses/${courseId}/assignments/${assignmentId}/submissions?` + buildOptions(options))
 }

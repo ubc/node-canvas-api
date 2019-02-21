@@ -81,7 +81,8 @@ const getOptions = {
   rubric: {
     assessments: 'include=assessments',
     graded_assessments: 'include=graded_assessments',
-    peer_assessments: 'include=peer_assessments'
+    peer_assessments: 'include=peer_assessments',
+    data_assessment: 'style=full'
   }
 }
 

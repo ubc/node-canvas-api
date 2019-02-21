@@ -77,7 +77,8 @@ const getOptions = {
     blueprint: 'blueprint=true'
   },
   submissions: {
-    rubric_assessment: 'include[]=rubric_assessment'
+    rubric_assessment: 'include[]=rubric_assessment',
+    submission_comments: 'include[]=submission_comments'
   },
   rubric: {
     assessments: 'include=assessments',

@@ -1,5 +1,6 @@
 import fetchAll from './internal/fetchAll'
 import buildOptions from './internal/util'
+import getOptions from './internal/getOptions'
 
 require('dotenv').config()
 
@@ -13,5 +14,5 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  */
 
 export default function getRubricsInCourse (courseId, ...options) {
-  return fetchAll(canvasDomain + `/courses/${courseId}/rubrics?` + buildOptions(options))
+  return fetchAll(canvasDomain + `/courses/${courseId}/rubrics?` + buildOptions([getOptions.rubric.assessments, options]))
 }

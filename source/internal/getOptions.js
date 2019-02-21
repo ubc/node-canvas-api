@@ -77,6 +77,11 @@ const getOptions = {
   },
   submissions: {
     rubric_assessment: 'include[]=rubric_assessment'
+  },
+  rubric: {
+    assessments: 'include=assessments',
+    graded_assessments: 'include=graded_assessments',
+    peer_assessments: 'include=peer_assessments'
   }
 }
 

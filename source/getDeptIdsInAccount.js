@@ -2,9 +2,8 @@ import getSubaccounts from './getSubaccounts'
 
 /**
  * Retrieves all depts in account
- * @param {Number} accountId the course id.
- * @param {Array} options an array of options to include.
- * @return {Promise} A promise that resolves to a list of Assignment objects: https://canvas.instructure.com/doc/api/assignments.html#Assignment
+ * @param {Number} accountId the account id.
+ * @return {Promise} A promise that resolves to a list of Subaccount objects
  */
 
 const getDeptIdsInAccount = async accountId => {

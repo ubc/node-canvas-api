@@ -2,7 +2,7 @@
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 # Canvas API for Node
-Canvas API functions bundled as NPM package for Node. Used in some other projects, such as https://github.com/ubccapico/canvas-rubric.
+Canvas API functions bundled as NPM package for Node. Used in some other projects, such as retrieving [Canvas Rubrics](https://github.com/ubccapico/canvas-rubric) and [Canvas Discussions](https://github.com/ubccapico/canvas-discussion).
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for use with your own API tokens and Canvas domains.

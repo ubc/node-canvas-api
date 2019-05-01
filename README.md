@@ -21,13 +21,13 @@ To use with node:
 $ npm install node-canvas-api
 ```
 Then, in wherever you want to use this package:
-```javascript
+```js
 const canvasAPI = require('node-canvas-api');
 ```
 
-Attached to the `canvasAPI` are a bunch of functions.
-Add a `.env` file to the root of your directory with `CANVAS_API_TOKEN=` and your token and `CANVAS_API_DOMAIN=` and your Canvas domain + `/api/v1`. For example, `https://ubc.canvas.ca/api/v1`
+Rename the `sample.env` file to `.env` and add your institution's domain and API access token.
 
+Attached to the `canvasAPI` are a bunch of functions.
 Run the attached functions!
 
 ## Authors

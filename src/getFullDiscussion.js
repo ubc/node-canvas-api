@@ -9,8 +9,8 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a discussion topic view object
  */
 
-const getDiscussionTopics = async (courseId, topicId) => {
+const getFullDiscussion = async (courseId, topicId) => {
   return fetch(canvasDomain + `/courses/${courseId}/discussion_topics/${topicId}/view`);
 };
 
-module.exports = getDiscussionTopics;
+module.exports = getFullDiscussion;

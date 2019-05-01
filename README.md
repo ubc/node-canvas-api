@@ -25,7 +25,7 @@ const canvasAPI = require('node-canvas-api');
 
 Rename the `sample.env` file to `.env` and add your institution's domain and API access token.
 
-Attached to the `canvasAPI` are a bunch of functions.
+Attached to the `canvasAPI` are a [bunch of functions](https://github.com/ubccapico/node-canvas-api/tree/master/src).
 Run the attached functions!
 
 ## Contribute

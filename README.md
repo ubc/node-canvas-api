@@ -1,8 +1,8 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-# Canvas API for Node
-Canvas API functions bundled as NPM package for Node. Used in some other projects, such as retrieving [Canvas Rubrics](https://github.com/ubccapico/canvas-rubric) and [Canvas Discussions](https://github.com/ubccapico/canvas-discussion).
+# Canvas API for Node.js
+Canvas API functions bundled as a NPM package for Node.js.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for use with your own API tokens and Canvas domains.
@@ -38,6 +38,9 @@ Contributions are welcome and greatly appreciated!
 1. If you add a file to `source`, please add the file to the existing [`index.js` inside `source`](https://github.com/ubccapico/node-canvas-api/blob/master/source/index.js), so that during the build your contribution will be included in `src`.
 1. Test your code by creating a file in the root of the project directory, importing your code addition from `src`, and running it.
 1. Once you're happy with your contribution, open an [pull request](https://github.com/ubccapico/node-canvas-api/pulls) and I'll take a look.
+
+## Usage
+Used in some other projects, such as retrieving [Canvas Rubrics](https://github.com/ubccapico/canvas-rubric) and [Canvas Discussions](https://github.com/ubccapico/canvas-discussion).
 
 ## Authors
 

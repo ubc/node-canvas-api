@@ -1,6 +1,5 @@
 import fetchAll from './internal/fetchAll'
 import buildOptions from './internal/util'
-import getOptions from './internal/getOptions'
 
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
@@ -12,6 +11,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  * @return {Promise} A promise that resolves to a list of Assignment submission objects: https://canvas.instructure.com/doc/api/submissions.html
  */
 
-export default function getAssignmentSubmissions(courseId, assignmentId, ...options) {
+export default function getAssignmentSubmissions (courseId, assignmentId, ...options) {
   return fetchAll(canvasDomain + `/courses/${courseId}/assignments/${assignmentId}/submissions?` + buildOptions(options))
 }

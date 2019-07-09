@@ -44,8 +44,8 @@ Used in some other projects, such as retrieving [Canvas Rubrics, including grade
 
 ## Authors
 
-* **Justin Lee**
-https://github.com/justin0022 | justin.lee@ubc.ca
+* [justin0022](https://github.com/justin0022) -
+**Justin Lee** &lt;justin.lee@ubc.ca&gt;
 
 ## License
 

@@ -1,7 +1,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
-# Canvas API for Node.js
+# Canvas LMS API for Node.js
 Canvas API functions bundled as a NPM package for Node.js.
 
 ## Getting Started

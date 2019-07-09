@@ -40,7 +40,9 @@ Contributions are welcome and greatly appreciated!
 1. Once you're happy with your contribution, open an [pull request](https://github.com/ubccapico/node-canvas-api/pulls) and I'll take a look.
 
 ## Usage
-Used in some other projects, such as retrieving [Canvas Rubrics, including grades](https://github.com/ubccapico/canvas-rubric) and downloading all [Canvas Discussions](https://github.com/ubccapico/canvas-discussion).
+* [Canvas Rubrics](https://github.com/ubccapico/canvas-rubric)
+* [Canvas Discussions](https://github.com/ubccapico/canvas-discussion)
+* [Canvas Syllabus](https://github.com/UBC-LFS/lfs-canvas-syllabus)
 
 ## Authors
 

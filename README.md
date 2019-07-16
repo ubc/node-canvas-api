@@ -28,6 +28,24 @@ Rename the `sample.env` file to `.env` and add your institution's domain and API
 Attached to the `canvasAPI` are a [bunch of functions](https://github.com/ubccapico/node-canvas-api/tree/master/src).
 Run the attached functions!
 
+### Example Usage
+
+#### Get information about self:
+```js
+const canvasAPI = require('node-canvas-api')
+
+canvasAPI.getSelf()
+  .then(self => console.log(self))
+```
+
+#### Get students in a course:
+```js
+const { getUsersInCourse, getOptions } = require('node-canvas-api')
+
+getUsersInCourse(12345, getOptions.users.enrollmentType.student) // first argument is Canvas course ID
+  .then(students => console.log(students))
+```
+
 ## Contribute
 Contributions are welcome and greatly appreciated!
 

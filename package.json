@@ -1,6 +1,6 @@
 {
   "name": "node-canvas-api",
-  "version": "1.3.9",
+  "version": "1.4.0",
   "description": "Canvas LMS API for Node",
   "main": "src/index.js",
   "module": "es/index.js",
@@ -18,7 +18,7 @@
   "author": "Justin Lee",
   "license": "MIT",
   "dependencies": {
-    "bottleneck": "^2.19.0",
+    "bottleneck": "^2.19.4",
     "config": "^1.31.0",
     "dotenv": "^4.0.0",
     "parse-link-header": "^1.0.1",
@@ -44,5 +44,16 @@
     "client",
     "api",
     "instructure"
-  ]
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubccapico/node-canvas-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ubccapico/node-canvas-api/issues"
+  },
+  "homepage": "https://github.com/ubccapico/node-canvas-api#readme"
 }

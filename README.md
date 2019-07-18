@@ -10,7 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1. **Install [Node 8.0.0 or greater](https://nodejs.org)**.
-2. **Install [Git](https://git-scm.com/downloads)**.
 
 ### Installation
 
@@ -20,7 +19,7 @@ $ npm install node-canvas-api
 ```
 Then, in wherever you want to use this package:
 ```js
-const canvasAPI = require('node-canvas-api');
+const canvasAPI = require('node-canvas-api')
 ```
 
 Rename the `sample.env` file to `.env` and add your institution's domain and API access token.

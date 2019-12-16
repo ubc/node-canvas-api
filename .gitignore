@@ -70,4 +70,4 @@ client_secret.json
 credentials.json
 quickstart.json
 test.js
-index.js
+/index.js

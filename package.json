@@ -1,6 +1,6 @@
 {
   "name": "node-canvas-api",
-  "version": "1.4.0",
+  "version": "1.5.2",
   "description": "Canvas LMS API for Node",
   "main": "src/index.js",
   "module": "es/index.js",

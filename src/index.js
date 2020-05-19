@@ -45,3 +45,4 @@ module.exports.getDiscussionTopic = require('./getDiscussionTopic');
 module.exports.getFullDiscussion = require('./getFullDiscussion');
 module.exports.getSelf = require('./getSelf');
 module.exports.getOutcome = require('./getOutcome');
+module.exports.getQuizSubmissions = require('./getQuizSubmissions');

@@ -29,7 +29,8 @@ const getOptions = {
       custom_links: 'include[]=custom_links',
       current_grading_period_scores: 'include[]=current_grading_period_scores',
       term: 'include[]=term',
-      students: 'include[]=students'
+      students: 'include[]=students',
+      user: 'include[]=user'
     },
     userIds: id => `user_ids[]=${encodeURIComponent(id)}`,
     enrollmentState: {
@@ -78,7 +79,11 @@ const getOptions = {
   },
   submissions: {
     rubric_assessment: 'include[]=rubric_assessment',
-    submission_comments: 'include[]=submission_comments'
+    submission_comments: 'include[]=submission_comments',
+    submission: 'include[]=submission'
+  },
+  quiz: {
+    quiz: 'include[]=quiz'
   },
   rubric: {
     assessments: 'include=assessments',

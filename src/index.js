@@ -47,3 +47,4 @@ module.exports.getSelf = require('./getSelf');
 module.exports.getOutcome = require('./getOutcome');
 module.exports.getQuizSubmissions = require('./getQuizSubmissions');
 module.exports.getQuizSubmissionEvents = require('./getQuizSubmissionEvents');
+module.exports.getQuizQuestions = require('./getQuizQuestions');

@@ -12,6 +12,6 @@ const putRequest = (url, body) => request({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-}).then(response => response).catch(err => console.log(err.message, err.options.form, err.options.uri))
+}).then(response => response)
 
 export default putRequest

@@ -58,7 +58,7 @@ Contributions are welcome and greatly appreciated!
 1. Once you're happy with your contribution, open an [pull request](https://github.com/ubccapico/node-canvas-api/pulls) and I'll take a look.
 
 ### Hypothetical scenario for adding new feature
-1.	Add new file to `source` folder (say that the new file you want to add is ‘getUsersWithGradeThreshold.js`)
+1.	Add new file to `source` folder (say that the new file you want to add is `getUsersWithGradeThreshold.js`)
 2.	 In the `source` folder, there’s an `index.js` file that lists all of the files you want exported to `src`. There you will add: `export { default as getUsersWithGradeThreshold } from './getUsersWithGradeThreshold'`
 3.	Run `npm run build`, which will build the project and output your new function into `src`. 
 4.	In the `index.js` at the root of the project that you create (this is not the `index.js` that’s in the `source` folder), import your new file from `src` like this: `const getUsersWithGradeThreshold = require('.src/getUsersWithGradeThreshold')` and test by running the code: `node index.js`.

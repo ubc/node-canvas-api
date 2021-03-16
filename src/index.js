@@ -50,3 +50,5 @@ module.exports.getQuizSubmissionEvents = require('./getQuizSubmissionEvents');
 module.exports.getQuizQuestions = require('./getQuizQuestions');
 module.exports.getCourseAnalytics = require('./getCourseAnalytics');
 module.exports.getPlannerItemsByUser = require('./getPlannerItemsByUser');
+module.exports.getGroupsInCourse = require('./getGroupsInCourse');
+module.exports.getGroupDiscussionTopics = require('./getGroupDiscussionTopics');

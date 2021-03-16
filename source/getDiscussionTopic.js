@@ -3,7 +3,7 @@ import fetch from './internal/fetch'
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
- * Retrives all discussion topics in course
+ * Retrives a single discussion topic
  * @param {Number} courseId the course id.
  * @param {Number} topicId the discussion topic id.
  * @return {Promise} A promise that resolves to a discussion topic Object

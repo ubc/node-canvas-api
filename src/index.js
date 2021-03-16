@@ -52,3 +52,4 @@ module.exports.getCourseAnalytics = require('./getCourseAnalytics');
 module.exports.getPlannerItemsByUser = require('./getPlannerItemsByUser');
 module.exports.getGroupsInCourse = require('./getGroupsInCourse');
 module.exports.getGroupDiscussionTopics = require('./getGroupDiscussionTopics');
+module.exports.getFullGroupDiscussion = require('./getFullGroupDiscussion');

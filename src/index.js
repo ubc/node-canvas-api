@@ -54,3 +54,5 @@ module.exports.getGroupsInCourse = require('./getGroupsInCourse');
 module.exports.getGroupDiscussionTopics = require('./getGroupDiscussionTopics');
 module.exports.getFullGroupDiscussion = require('./getFullGroupDiscussion');
 module.exports.getGroupDiscussionTopic = require('./getGroupDiscussionTopic');
+module.exports.getQuizSubmission = require('./getQuizSubmission');
+module.exports.postAssignmentSubmissionComment = require('./postAssignmentSubmissionComment');

@@ -27,7 +27,7 @@ const fetchAll = (url, result = []) => request(requestObj(url)).then(response =>
   result = [...result, ...response.body];
   const links = linkparser(response.headers.link);
   return links.next ? fetchAll(links.next.url, result) : result;
-}).catch(err => console.log(err));
+});
 
 const fetchAllRateLimited = limiter.wrap(fetchAll);
 

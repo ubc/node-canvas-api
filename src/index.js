@@ -41,6 +41,7 @@ module.exports.getAssignmentSubmissions = require('./getAssignmentSubmissions');
 module.exports.getEnrollmentsInCourse = require('./getEnrollmentsInCourse');
 module.exports.getSections = require('./getSections');
 module.exports.getModules = require('./getModules');
+module.exports.getModuleItems = require('./getModuleItems');
 module.exports.getDiscussionTopics = require('./getDiscussionTopics');
 module.exports.getDiscussionTopic = require('./getDiscussionTopic');
 module.exports.getFullDiscussion = require('./getFullDiscussion');

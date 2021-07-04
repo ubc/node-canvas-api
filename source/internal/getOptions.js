@@ -90,7 +90,37 @@ const getOptions = {
     graded_assessments: 'include=graded_assessments',
     peer_assessments: 'include=peer_assessments',
     data_assessment: 'style=full'
+  },
+  module: {
+    include: {
+      items: 'include[]=items',
+      content_details: 'include[]=content_details'
+    }
+  },
+  discussion: {
+    include: {
+      all_dates: 'include[]=all_dates',
+      sections: 'include[]=sections',
+      sections_user_count: 'include[]=sections_user_count',
+      overrides: 'include[]=overrides'
+    },
+    order_by: {
+      position: 'orderby=position',
+      recent_activity: 'orderby=recent_activity',
+      title: 'orderby=title'
+    },
+    scope: {
+      locked: 'scope=locked',
+      unlocked: 'scope=unlocked',
+      pinned: 'scope=pinned',
+      unpinned: 'scope=unpinned'
+    },
+    only_announcements: 'only_announcements=true',
+    filter_by: {
+      all: 'filter_by=all',
+      unread: 'filter_by=unread'
+    }
   }
-}
+};
 
-export default getOptions
+export default getOptions;

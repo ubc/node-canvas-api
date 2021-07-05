@@ -69,11 +69,6 @@ Contributions are welcome and greatly appreciated!
 * [Canvas Discussions](https://github.com/ubccapico/canvas-discussion)
 * [Canvas Syllabus](https://github.com/UBC-LFS/lfs-canvas-syllabus)
 
-## Authors
-
-* [justin0022](https://github.com/justin0022) -
-**Justin Lee** &lt;justin.lee@ubc.ca&gt;
-
 ## License
 
 This project is licensed under the MIT License.

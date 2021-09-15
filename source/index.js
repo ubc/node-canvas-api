@@ -60,3 +60,4 @@ export { default as postAssignmentSubmissionComment } from './postAssignmentSubm
 export { default as deleteSubmissionComment } from './deleteSubmissionComment'
 export { default as getCourse } from './getCourse'
 export { default as getCourseSections } from './getCourseSections'
+export { default as getEnrollmentsInSection } from './getEnrollmentsInSection'

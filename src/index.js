@@ -62,3 +62,7 @@ module.exports.deleteSubmissionComment = require('./deleteSubmissionComment');
 module.exports.getCourse = require('./getCourse');
 module.exports.getCourseSections = require('./getCourseSections');
 module.exports.getEnrollmentsInSection = require('./getEnrollmentsInSection');
+module.exports.createGroup = require('./createGroup');
+module.exports.createGroupCategories = require('./createGroupCategories');
+module.exports.createGroupMembership = require('./createGroupMembership');
+module.exports.getEnrollmentsInSection = require('./getEnrollmentsInSection');

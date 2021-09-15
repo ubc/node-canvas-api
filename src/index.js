@@ -61,3 +61,4 @@ module.exports.postAssignmentSubmissionComment = require('./postAssignmentSubmis
 module.exports.deleteSubmissionComment = require('./deleteSubmissionComment');
 module.exports.getCourse = require('./getCourse');
 module.exports.getCourseSections = require('./getCourseSections');
+module.exports.getEnrollmentsInSection = require('./getEnrollmentsInSection');

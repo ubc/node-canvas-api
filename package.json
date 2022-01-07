@@ -21,7 +21,7 @@
     "bottleneck": "^2.19.4",
     "config": "^1.31.0",
     "dotenv": "^4.0.0",
-    "parse-link-header": "^1.0.1",
+    "parse-link-header": "^2.0.0",
     "prompts": "^0.1.14",
     "ramda": "^0.25.0",
     "request": "^2.88.0",

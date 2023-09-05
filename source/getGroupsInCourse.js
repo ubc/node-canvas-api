@@ -1,4 +1,4 @@
-import fetch from './internal/fetch'
+import fetchAll from './internal/fetchAll'
 
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
@@ -9,7 +9,7 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  */
 
 const getGroupsInCourse = async courseId => {
-  return fetch(canvasDomain + `/courses/${courseId}/groups`)
+  return fetchAll(canvasDomain + `/courses/${courseId}/groups`)
 }
 
 export default getGroupsInCourse

@@ -1,7 +1,10 @@
 /* global test, expect */
+const {should, expect } = require('chai');
 
-const copyCourseContent = require('../src/CopyCourseContent')
+const copyCourseContent = require('../src/CopyCourseContent');
 
-test('copyCourseContent function exists', () => {
-  expect(typeof copyCourseContent).toEqual('function')
-})
+describe('copyCourseContent function exists', () => {
+  it('typcheck', () => {
+    expect(copyCourseContent).to.be.a('function');
+  });
+});

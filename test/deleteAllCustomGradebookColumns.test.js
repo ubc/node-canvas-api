@@ -1,7 +1,10 @@
 /* global test, expect */
+const { expect } = require('chai');
 
 const deleteAllCustomGradebookColumns = require('../src/deleteAllCustomGradebookColumns')
 
-test('deleteAllCustomGradebookColumns function exists', () => {
-  expect(typeof deleteAllCustomGradebookColumns).toEqual('function')
-})
+describe('deleteAllCustomGradebookColumns function exists', () => {
+  it('typecheck', ()=> {
+    expect(deleteAllCustomGradebookColumns).to.be.a('function');
+  });
+});

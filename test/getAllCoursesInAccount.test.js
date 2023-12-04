@@ -1,7 +1,10 @@
 /* global test, expect */
+const { expect } = require('chai');
 
 const getAllCoursesInAccount = require('../src/getAllCoursesInAccount')
 
-test('getAllCoursesInAccount function exists', () => {
-  expect(typeof getAllCoursesInAccount).toEqual('function')
-})
+describe('getAllCoursesInAccount function exists', () => {
+  it('typecheck', ()=> {
+    expect(getAllCoursesInAccount).to.be.a('function');
+  });
+});

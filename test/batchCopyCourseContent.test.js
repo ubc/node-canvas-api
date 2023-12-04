@@ -1,7 +1,10 @@
 /* global test, expect */
+const { expect } = require('chai');
 
 const batchCopyCourseContent = require('../src/batchCopyCourseContent')
 
-test('batchCopyCourseContent function exists', () => {
-  expect(typeof batchCopyCourseContent).toEqual('function')
-})
+describe('batchCopyCourseContent function exists', () => {
+  it('typecheck', ()=> {
+    expect(batchCopyCourseContent).to.be.a('function');
+  });
+});

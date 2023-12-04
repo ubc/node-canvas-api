@@ -1,7 +1,10 @@
 /* global test, expect */
+const { expect } = require('chai');
 
-const showCustomGradebookColumns = require('../src/showCustomGradebookColumns')
+const showCustomGradebookColumn = require('../src/showCustomGradebookColumn.js')
 
-test('showCustomGradebookColumns function exists', () => {
-  expect(typeof showCustomGradebookColumns).toEqual('function')
-})
+describe('showCustomGradebookColumn function exists', () => {
+  it('typecheck', ()=> {
+    expect(showCustomGradebookColumn).to.be.a('function');
+  });
+});

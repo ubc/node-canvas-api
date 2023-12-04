@@ -1,7 +1,10 @@
 /* global test, expect */
+const { expect } = require('chai');
 
 const getAccounts = require('../src/getAccountIds')
 
-test('getAccountIDs function exists', () => {
-  expect(typeof getAccounts).toEqual('function')
-})
+describe('getAccountIDs function exists', () => {
+  it('typecheck', () => {
+    expect(getAccounts).to.be.a('function');
+  });
+});

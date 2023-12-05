@@ -66,3 +66,4 @@ module.exports.createGroup = require('./createGroup');
 module.exports.createGroupCategories = require('./createGroupCategories');
 module.exports.createGroupMembership = require('./createGroupMembership');
 module.exports.getHistory = require('./getHistory');
+module.exports.deleteUserCourseEnrollment = require('./deleteUserCourseEnrollment');

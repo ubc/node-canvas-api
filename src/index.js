@@ -3,6 +3,7 @@ module.exports.batchCopyCourseContent = require('./batchCopyCourseContent');
 module.exports.copyCourseContent = require('./copyCourseContent');
 module.exports.createCourse = require('./createCourse');
 module.exports.createCustomGradebookColumn = require('./createCustomGradebookColumn');
+module.exports.createUser = require('./createUser');
 module.exports.createUserCourseEnrollment = require('./createUserCourseEnrollment');
 module.exports.createUserSectionEnrollment = require('./createUserSectionEnrollment');
 module.exports.deleteAllCustomGradebookColumns = require('./deleteAllCustomGradebookColumns');

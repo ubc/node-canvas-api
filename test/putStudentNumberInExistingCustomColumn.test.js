@@ -18,10 +18,3 @@ test('putStudentNumberInExistingCustomColumn function exists', () => {
 //   })
 // })
 
-// work in progress
-test('Expect putStudentNumbersInExistingGradebook called with 2 args', () => {
-  expect.assertions(1)
-  const data = putStudentNumbersInExistingGradebook(2503)
-
-  return expect(data).toBeCalledWith()
-})

@@ -1,7 +1,7 @@
 /* global test, expect */
 
-const hideCustomGradebookColumns = require('../src/hideCustomGradebookColumns')
+const hideCustomGradebookColumn = require('../src/hideCustomGradebookColumn')
 
-test('hideCustomGradebookColumns function exists', () => {
-  expect(typeof hideCustomGradebookColumns).toEqual('function')
+test('hideCustomGradebookColumn function exists', () => {
+  expect(typeof hideCustomGradebookColumn).toEqual('function')
 })

@@ -1,9 +1,9 @@
 /* global test, expect, describe, it, jest */
 
-const putStudentNumbersInExistingGradebook = require('../src/putStudentNumberInExistingGradebook')
+const putStudentNumberInExistingCustomColumn = require('../src/putStudentNumberInExistingCustomColumn')
 
-test('putStudentNumbersInExistingGradebook function exists', () => {
-  expect(typeof putStudentNumbersInExistingGradebook).toEqual('function')
+test('putStudentNumberInExistingCustomColumn function exists', () => {
+  expect(typeof putStudentNumberInExistingCustomColumn).toEqual('function')
 })
 
 // describe('putStudentNumbersInExistingGradebook', () => {

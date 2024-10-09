@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-1. **Install [Node 8.0.0 or greater](https://nodejs.org)**.
+1. **Install [Node LTS (20 or greater)](https://nodejs.org)**.
 
 ### Installation
 

@@ -1,5 +1,4 @@
-var fetchAll = require('./internal/fetchAll');
-
+var fetchAll = require("./internal/fetchAll");
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**
@@ -11,5 +10,4 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
 const getGroupsInCourse = async courseId => {
   return fetchAll(canvasDomain + `/courses/${courseId}/groups`);
 };
-
 module.exports = getGroupsInCourse;

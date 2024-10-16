@@ -1,7 +1,5 @@
-var fetchAll = require('./internal/fetchAll');
-
-var buildOptions = require('./internal/util');
-
+var fetchAll = require("./internal/fetchAll");
+var buildOptions = require("./internal/util");
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**

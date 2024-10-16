@@ -1,5 +1,4 @@
-var fetch = require('./internal/fetch');
-
+var fetch = require("./internal/fetch");
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**
@@ -12,5 +11,4 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
 const getFullGroupDiscussion = async (groupId, topicId) => {
   return fetch(canvasDomain + `/groups/${groupId}/discussion_topics/${topicId}/view`);
 };
-
 module.exports = getFullGroupDiscussion;

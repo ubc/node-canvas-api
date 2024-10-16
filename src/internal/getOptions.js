@@ -122,5 +122,4 @@ const getOptions = {
     }
   }
 };
-
 module.exports = getOptions;

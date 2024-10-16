@@ -1,5 +1,4 @@
-var fetch = require('./internal/fetch');
-
+var fetch = require("./internal/fetch");
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**
@@ -12,5 +11,4 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
 const getQuizSubmission = async (courseId, quizId, submissionId) => {
   return fetch(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}`);
 };
-
 module.exports = getQuizSubmission;

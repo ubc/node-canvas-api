@@ -1,7 +1,5 @@
-var postRequest = require('./internal/post');
-
+var postRequest = require("./internal/post");
 require('dotenv').config();
-
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**
@@ -17,5 +15,4 @@ function courseCopy(sourceCourseId, targetCourseId) {
     'settings[source_course_id]': `${sourceCourseId}`
   });
 }
-
 module.exports = courseCopy;

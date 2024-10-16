@@ -1,7 +1,5 @@
-var putRequest = require('./internal/put');
-
+var putRequest = require("./internal/put");
 require('dotenv').config();
-
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**

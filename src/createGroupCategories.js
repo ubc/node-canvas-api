@@ -1,7 +1,5 @@
-var postRequest = require('./internal/post');
-
+var postRequest = require("./internal/post");
 require('dotenv').config();
-
 const canvasDomain = process.env.CANVAS_API_DOMAIN;
 
 /**

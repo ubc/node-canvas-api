@@ -1,13 +1,8 @@
-var request = require('request-promise');
-
-var getFile = require('./getFile');
-
-var fs = require('fs');
-
+var request = require("request-promise");
+var getFile = require("./getFile");
+var fs = require("fs");
 require('dotenv').config();
-
 const token = process.env.CANVAS_API_TOKEN;
-
 const requestObj = url => ({
   'method': 'GET',
   'uri': url,
@@ -25,7 +20,10 @@ const requestObj = url => ({
  * @return {Promise} A Promise that resolves to a log that inidicated what the filename of the downloaded file is. On error, logs the error
  */
 
-const downloadFile = (fileId, path) => getFile(fileId, path).then(({ url, filename }) => {
+const downloadFile = (fileId, path) => getFile(fileId, path).then(({
+  url,
+  filename
+}) => {
   const modifiedName = filename.replace('%28', '(').replace('%29', ')').replace('%E2%80%93', '-');
   const pdfStream = fs.createWriteStream(path + modifiedName);
   request(requestObj(url)).pipe(pdfStream);
@@ -34,5 +32,4 @@ const downloadFile = (fileId, path) => getFile(fileId, path).then(({ url, filena
     pdfStream.on('error', err => reject(err));
   });
 });
-
 module.exports = downloadFile;

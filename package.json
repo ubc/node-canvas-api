@@ -5,6 +5,7 @@
   "files": [
     "src"
   ],
+  "main": "src/index.js",
   "author": "Justin Lee",
   "license": "MIT",
   "type": "module",

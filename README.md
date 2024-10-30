@@ -3,7 +3,7 @@
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 # Canvas LMS API for Node.js
-Canvas API functions bundled as a NPM package for Node.js. Note: this package no longer supports CJS as of version 2.0.0. If you need CJS support, please use [version 1.8.0](https://www.npmjs.com/package/node-canvas-api/v/1.8.0).
+Canvas API functions bundled as a NPM package for Node.js. Note: this package no longer supports CJS as of [version 2.0.0](https://www.npmjs.com/package/node-canvas-api/v/2.0.0). If you need CJS support, please use [version 1.8.0](https://www.npmjs.com/package/node-canvas-api/v/1.8.0).
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for use with your own API tokens and Canvas domains.

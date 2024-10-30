@@ -24,12 +24,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ubccapico/node-canvas-api.git"
+    "url": "git+https://github.com/ubc/node-canvas-api.git"
   },
   "bugs": {
-    "url": "https://github.com/ubccapico/node-canvas-api/issues"
+    "url": "https://github.com/ubc/node-canvas-api/issues"
   },
-  "homepage": "https://github.com/ubccapico/node-canvas-api#readme",
+  "homepage": "https://github.com/ubc/node-canvas-api#readme",
   "devDependencies": {
     "@babel/cli": "^7.25.9",
     "@babel/core": "^7.26.0",

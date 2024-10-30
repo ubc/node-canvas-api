@@ -1,6 +1,6 @@
-var postRequest = require("./internal/post");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import postRequest from './internal/post.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Creates group
@@ -10,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A Group object: https://canvas.instructure.com/doc/api/groups.html#method.groups.create
  */
 
-function createGroup(groupCategoryId, body) {
-  return postRequest(canvasDomain + `/group_categories/${groupCategoryId}/groups`, body);
+export default function createGroup (groupCategoryId, body) {
+  return postRequest(canvasDomain + `/group_categories/${groupCategoryId}/groups`, body)
 }
-module.exports = createGroup;

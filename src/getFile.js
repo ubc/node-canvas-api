@@ -1,6 +1,6 @@
-var fetch = require("./internal/fetch");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetch from './internal/fetch.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Get file object by fileId
@@ -8,7 +8,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a File object: https://canvas.instructure.com/doc/api/files.html#File
  */
 
-function getFile(fileId) {
-  return fetch(canvasDomain + `/files/${fileId}`);
+export default function getFile (fileId) {
+  return fetch(canvasDomain + `/files/${fileId}`)
 }
-module.exports = getFile;

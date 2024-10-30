@@ -1,6 +1,6 @@
-var fetchAll = require("./internal/fetchAll");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrives high-level course analytics
@@ -8,7 +8,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a User object: https://canvas.instructure.com/doc/api/users.html#User
  */
 
-function getCourseAnalytics(courseId) {
-  return fetchAll(canvasDomain + `/courses/${courseId}/analytics/student_summaries`);
+export default function getCourseAnalytics (courseId) {
+  return fetchAll(canvasDomain + `/courses/${courseId}/analytics/student_summaries`)
 }
-module.exports = getCourseAnalytics;

@@ -1,6 +1,6 @@
-var putRequest = require("./internal/put");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import putRequest from './internal/put.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Put student number in grade column
@@ -11,7 +11,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a CustomColumn object: https://canvas.instructure.com/doc/api/custom_gradebook_columns.html#CustomColumn
  */
 
-function putStudentNumberInGradeColumn(courseId, gradebookColumnId, studentId, body) {
-  return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body);
+export default function putStudentNumberInGradeColumn (courseId, gradebookColumnId, studentId, body) {
+  return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${gradebookColumnId}/data/${studentId}`, body)
 }
-module.exports = putStudentNumberInGradeColumn;

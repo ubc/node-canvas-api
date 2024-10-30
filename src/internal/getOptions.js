@@ -121,5 +121,6 @@ const getOptions = {
       unread: 'filter_by=unread'
     }
   }
-};
-module.exports = getOptions;
+}
+
+export default getOptions

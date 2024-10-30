@@ -1,7 +1,11 @@
-var request = require("request-promise");
-require('dotenv').config();
-const token = process.env.CANVAS_API_TOKEN;
-const putRequest = (url, body) => request({
+import nodeFetch from 'node-fetch'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const token = process.env.CANVAS_API_TOKEN
+
+const putRequest = (url, body) => nodeFetch({
   'method': 'PUT',
   'uri': url,
   'json': true,
@@ -9,5 +13,6 @@ const putRequest = (url, body) => request({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-}).then(response => response);
-module.exports = putRequest;
+}).then(response => response)
+
+export default putRequest

@@ -1,5 +1,6 @@
-var fetch = require("./internal/fetch");
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetch from './internal/fetch.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrives a single discussion topic
@@ -9,6 +10,7 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  */
 
 const getDiscussionTopics = async (courseId, topicId) => {
-  return fetch(canvasDomain + `/courses/${courseId}/discussion_topics/${topicId}`);
-};
-module.exports = getDiscussionTopics;
+  return fetch(canvasDomain + `/courses/${courseId}/discussion_topics/${topicId}`)
+}
+
+export default getDiscussionTopics

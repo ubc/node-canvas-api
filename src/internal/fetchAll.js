@@ -1,25 +1,33 @@
-var request = require("request-promise");
-var linkparser = require("parse-link-header");
-var Bottleneck = require("bottleneck");
-require('dotenv').config();
-const token = process.env.CANVAS_API_TOKEN;
+import nodeFetch from 'node-fetch'
+import linkparser from 'parse-link-header'
+import Bottleneck from 'bottleneck'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const token = process.env.CANVAS_API_TOKEN
+
 const limiter = new Bottleneck({
   maxConcurrent: 20,
   minTime: 100
-});
-const requestObj = url => ({
-  'method': 'GET',
-  'uri': url,
-  'json': true,
-  'resolveWithFullResponse': true,
-  'headers': {
+})
+
+const requestObj = {
+  method: 'GET',
+  headers: {
     'Authorization': 'Bearer ' + token
   }
-});
-const fetchAll = (url, result = []) => request(requestObj(url)).then(response => {
-  result = [...result, ...response.body];
-  const links = linkparser(response.headers.link);
-  return links.next ? fetchAll(links.next.url, result) : result;
-});
-const fetchAllRateLimited = limiter.wrap(fetchAll);
-module.exports = fetchAllRateLimited;
+}
+
+const fetchAll = async (url, result = []) => {
+  const response = await nodeFetch(url, requestObj)
+  const data = await response.json()
+  result = [...result, ...data]
+
+  const links = linkparser(response.headers.get('link'))
+  return links?.next ? fetchAll(links.next.url, result) : result
+}
+
+const fetchAllRateLimited = limiter.wrap(fetchAll)
+
+export default fetchAllRateLimited

@@ -1,6 +1,6 @@
-var putRequest = require("./internal/put");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import putRequest from './internal/put.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Update a course
@@ -9,7 +9,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a course metadata response: https://canvas.instructure.com/doc/api/courses.html#method.courses.update
  */
 
-function updateCourse(courseId, options) {
-  return putRequest(canvasDomain + `/courses/${courseId}`, options);
+export default function updateCourse (courseId, options) {
+  return putRequest(canvasDomain + `/courses/${courseId}`, options)
 }
-module.exports = updateCourse;

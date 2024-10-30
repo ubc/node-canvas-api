@@ -1,69 +1,68 @@
-module.exports = {};
-module.exports.batchCopyCourseContent = require("./batchCopyCourseContent");
-module.exports.copyCourseContent = require("./copyCourseContent");
-module.exports.createCourse = require("./createCourse");
-module.exports.createCustomGradebookColumn = require("./createCustomGradebookColumn");
-module.exports.createUser = require("./createUser");
-module.exports.createUserCourseEnrollment = require("./createUserCourseEnrollment");
-module.exports.createUserSectionEnrollment = require("./createUserSectionEnrollment");
-module.exports.deleteAllCustomGradebookColumns = require("./deleteAllCustomGradebookColumns");
-module.exports.downloadFile = require("./downloadFile");
-module.exports.deleteCustomGradebookColumn = require("./deleteCustomGradebookColumn");
-module.exports.getAccountIds = require("./getAccountIds");
-module.exports.getAccounts = require("./getAccounts");
-module.exports.getAllCoursesInAccount = require("./getAllCoursesInAccount");
-module.exports.getAllCoursesInDept = require("./getAllCoursesInDept");
-module.exports.getAllCourseSyllabiInAccount = require("./getAllCourseSyllabiInAccount");
-module.exports.getAnalytics = require("./getAnalytics");
-module.exports.getAssignments = require("./getAssignments");
-module.exports.getCourses = require("./getCourses");
-module.exports.getCoursesByUser = require("./getCoursesByUser");
-module.exports.getCustomGradeBookColumns = require("./getCustomGradeBookColumns");
-module.exports.getDeptIdsInAccount = require("./getDeptIdsInAccount");
-module.exports.getProgress = require("./getProgress");
-module.exports.getSubaccounts = require("./getSubaccounts");
-module.exports.getSyllabusOfCourse = require("./getSyllabusOfCourse");
-module.exports.getUserPageViews = require("./getUserPageViews");
-module.exports.getUsersInAccount = require("./getUsersInAccount");
-module.exports.getUsersInCourse = require("./getUsersInCourse");
-module.exports.hideCustomGradebookColumn = require("./hideCustomGradebookColumn");
-module.exports.hideCustomGradebookColumnsByName = require("./hideCustomGradebookColumnsByName");
-module.exports.putStudentNumberInExistingCustomColumn = require("./putStudentNumberInExistingCustomColumn");
-module.exports.putStudentNumberInGradeColumn = require("./putStudentNumberInGradeColumn");
-module.exports.putStudentNumbersInGradebook = require("./putStudentNumbersInGradebook");
-module.exports.showCustomGradebookColumn = require("./showCustomGradebookColumn");
-module.exports.showCustomGradebookColumnsByName = require("./showCustomGradebookColumnsByName");
-module.exports.checkProgressStatus = require("./checkProgressStatus");
-module.exports.getOptions = require("./internal/getOptions");
-module.exports.getUser = require("./getUser");
-module.exports.getRubricsInCourse = require("./getRubricsInCourse");
-module.exports.getRubric = require("./getRubric");
-module.exports.getAssignmentSubmissions = require("./getAssignmentSubmissions");
-module.exports.getEnrollmentsInCourse = require("./getEnrollmentsInCourse");
-module.exports.getSections = require("./getSections");
-module.exports.getModules = require("./getModules");
-module.exports.getModuleItems = require("./getModuleItems");
-module.exports.getDiscussionTopics = require("./getDiscussionTopics");
-module.exports.getDiscussionTopic = require("./getDiscussionTopic");
-module.exports.getFullDiscussion = require("./getFullDiscussion");
-module.exports.getSelf = require("./getSelf");
-module.exports.getOutcome = require("./getOutcome");
-module.exports.getQuizSubmissions = require("./getQuizSubmissions");
-module.exports.getQuizSubmissionEvents = require("./getQuizSubmissionEvents");
-module.exports.getQuizQuestions = require("./getQuizQuestions");
-module.exports.getCourseAnalytics = require("./getCourseAnalytics");
-module.exports.getPlannerItemsByUser = require("./getPlannerItemsByUser");
-module.exports.getGroupsInCourse = require("./getGroupsInCourse");
-module.exports.getGroupDiscussionTopics = require("./getGroupDiscussionTopics");
-module.exports.getFullGroupDiscussion = require("./getFullGroupDiscussion");
-module.exports.getGroupDiscussionTopic = require("./getGroupDiscussionTopic");
-module.exports.getQuizSubmission = require("./getQuizSubmission");
-module.exports.postAssignmentSubmissionComment = require("./postAssignmentSubmissionComment");
-module.exports.deleteSubmissionComment = require("./deleteSubmissionComment");
-module.exports.getCourse = require("./getCourse");
-module.exports.getCourseSections = require("./getCourseSections");
-module.exports.getEnrollmentsInSection = require("./getEnrollmentsInSection");
-module.exports.createGroup = require("./createGroup");
-module.exports.createGroupCategories = require("./createGroupCategories");
-module.exports.createGroupMembership = require("./createGroupMembership");
-module.exports.getHistory = require("./getHistory");
+export { default as batchCopyCourseContent } from './batchCopyCourseContent'
+export { default as copyCourseContent } from './copyCourseContent'
+export { default as createCourse } from './createCourse'
+export { default as createCustomGradebookColumn } from './createCustomGradebookColumn'
+export { default as createUser } from './createUser'
+export { default as createUserCourseEnrollment } from './createUserCourseEnrollment'
+export { default as createUserSectionEnrollment } from './createUserSectionEnrollment'
+export { default as deleteAllCustomGradebookColumns } from './deleteAllCustomGradebookColumns'
+export { default as downloadFile } from './downloadFile'
+export { default as deleteCustomGradebookColumn } from './deleteCustomGradebookColumn'
+export { default as getAccountIds } from './getAccountIds'
+export { default as getAccounts } from './getAccounts'
+export { default as getAllCoursesInAccount } from './getAllCoursesInAccount'
+export { default as getAllCoursesInDept } from './getAllCoursesInDept'
+export { default as getAllCourseSyllabiInAccount } from './getAllCourseSyllabiInAccount'
+export { default as getAnalytics } from './getAnalytics'
+export { default as getAssignments } from './getAssignments'
+export { default as getCourses } from './getCourses'
+export { default as getCoursesByUser } from './getCoursesByUser'
+export { default as getCustomGradeBookColumns } from './getCustomGradeBookColumns'
+export { default as getDeptIdsInAccount } from './getDeptIdsInAccount'
+export { default as getProgress } from './getProgress'
+export { default as getSubaccounts } from './getSubaccounts'
+export { default as getSyllabusOfCourse } from './getSyllabusOfCourse'
+export { default as getUserPageViews } from './getUserPageViews'
+export { default as getUsersInAccount } from './getUsersInAccount'
+export { default as getUsersInCourse } from './getUsersInCourse'
+export { default as hideCustomGradebookColumn } from './hideCustomGradebookColumn'
+export { default as hideCustomGradebookColumnsByName } from './hideCustomGradebookColumnsByName'
+export { default as putStudentNumberInExistingCustomColumn } from './putStudentNumberInExistingCustomColumn'
+export { default as putStudentNumberInGradeColumn } from './putStudentNumberInGradeColumn'
+export { default as putStudentNumbersInGradebook } from './putStudentNumbersInGradebook'
+export { default as showCustomGradebookColumn } from './showCustomGradebookColumn'
+export { default as showCustomGradebookColumnsByName } from './showCustomGradebookColumnsByName'
+export { default as checkProgressStatus } from './checkProgressStatus'
+export { default as getOptions } from './internal/getOptions'
+export { default as getUser } from './getUser'
+export { default as getRubricsInCourse } from './getRubricsInCourse'
+export { default as getRubric } from './getRubric'
+export { default as getAssignmentSubmissions } from './getAssignmentSubmissions'
+export { default as getEnrollmentsInCourse } from './getEnrollmentsInCourse'
+export { default as getSections } from './getSections'
+export { default as getModules } from './getModules'
+export { default as getModuleItems } from './getModuleItems'
+export { default as getDiscussionTopics } from './getDiscussionTopics'
+export { default as getDiscussionTopic } from './getDiscussionTopic'
+export { default as getFullDiscussion } from './getFullDiscussion'
+export { default as getSelf } from './getSelf'
+export { default as getOutcome } from './getOutcome'
+export { default as getQuizSubmissions } from './getQuizSubmissions'
+export { default as getQuizSubmissionEvents } from './getQuizSubmissionEvents'
+export { default as getQuizQuestions } from './getQuizQuestions'
+export { default as getCourseAnalytics } from './getCourseAnalytics'
+export { default as getPlannerItemsByUser } from './getPlannerItemsByUser'
+export { default as getGroupsInCourse } from './getGroupsInCourse'
+export { default as getGroupDiscussionTopics } from './getGroupDiscussionTopics'
+export { default as getFullGroupDiscussion } from './getFullGroupDiscussion'
+export { default as getGroupDiscussionTopic } from './getGroupDiscussionTopic'
+export { default as getQuizSubmission } from './getQuizSubmission'
+export { default as postAssignmentSubmissionComment } from './postAssignmentSubmissionComment'
+export { default as deleteSubmissionComment } from './deleteSubmissionComment'
+export { default as getCourse } from './getCourse'
+export { default as getCourseSections } from './getCourseSections'
+export { default as getEnrollmentsInSection } from './getEnrollmentsInSection'
+export { default as createGroup } from './createGroup'
+export { default as createGroupCategories } from './createGroupCategories'
+export { default as createGroupMembership } from './createGroupMembership'
+export { default as getHistory } from './getHistory'

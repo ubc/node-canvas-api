@@ -1,6 +1,6 @@
-var postRequest = require("./internal/post");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import postRequest from './internal/post.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Create a new user enrollment for section.
@@ -10,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} An Enrollment object: https://canvas.instructure.com/doc/api/enrollments.html#Enrollment
  */
 
-function createUserSectionEnrollment(sectionId, body) {
-  return postRequest(canvasDomain + `/sections/${sectionId}/enrollments`, body);
+export default function createUserSectionEnrollment (sectionId, body) {
+  return postRequest(canvasDomain + `/sections/${sectionId}/enrollments`, body)
 }
-module.exports = createUserSectionEnrollment;

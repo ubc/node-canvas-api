@@ -1,6 +1,6 @@
-var postRequest = require("./internal/post");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import postRequest from './internal/post.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Creates custom gradebook column
@@ -10,10 +10,9 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a CustomColumn object: https://canvas.instructure.com/doc/api/custom_gradebook_columns.html#CustomColumn
  */
 
-function createCustomGradebookColumn(courseId, columnTitle, columnPosition) {
+export default function createCustomGradebookColumn (courseId, columnTitle, columnPosition) {
   return postRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns`, {
     'column[title]': columnTitle,
     'column[position]': columnPosition
-  });
+  })
 }
-module.exports = createCustomGradebookColumn;

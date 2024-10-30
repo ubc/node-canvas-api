@@ -1,7 +1,7 @@
-var fetchAll = require("./internal/fetchAll");
-var buildOptions = require("./internal/util");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+import buildOptions from './internal/util.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrives all discussion topics in course
@@ -11,6 +11,11 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  */
 
 const getDiscussionTopics = async (courseId, ...options) => {
-  return fetchAll(canvasDomain + `/courses/${courseId}/discussion_topics?` + buildOptions(options));
-};
-module.exports = getDiscussionTopics;
+  return fetchAll(
+    canvasDomain +
+      `/courses/${courseId}/discussion_topics?` +
+      buildOptions(options)
+  )
+}
+
+export default getDiscussionTopics

@@ -1,20 +1,23 @@
-var request = require("request-promise");
-var Bottleneck = require("bottleneck");
-require('dotenv').config();
-const token = process.env.CANVAS_API_TOKEN;
+import nodeFetch from 'node-fetch'
+import Bottleneck from 'bottleneck'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const token = process.env.CANVAS_API_TOKEN
+
 const limiter = new Bottleneck({
   maxConcurrent: 20,
   minTime: 100
-});
-const requestObj = url => ({
-  'method': 'GET',
-  'uri': url,
-  'json': true,
-  'resolveWithFullResponse': true,
-  'headers': {
+})
+
+const fetch = url => nodeFetch(url, {
+  method: 'GET',
+  headers: {
     'Authorization': 'Bearer ' + token
   }
-});
-const fetch = url => request(requestObj(url)).then(response => response.body);
-const fetchRateLimited = limiter.wrap(fetch);
-module.exports = fetchRateLimited;
+}).then(response => response.json())
+
+const fetchRateLimited = limiter.wrap(fetch)
+
+export default fetchRateLimited

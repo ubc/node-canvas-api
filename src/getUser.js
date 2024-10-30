@@ -1,6 +1,6 @@
-var fetch = require("./internal/fetch");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetch from './internal/fetch.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves a user by the user ID
@@ -8,7 +8,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a User object: https://canvas.instructure.com/doc/api/users.html#User
  */
 
-function getUser(userId) {
-  return fetch(canvasDomain + `/users/${userId}/`);
+export default function getUser (userId) {
+  return fetch(canvasDomain + `/users/${userId}/`)
 }
-module.exports = getUser;

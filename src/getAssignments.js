@@ -1,6 +1,7 @@
-var fetchAll = require("./internal/fetchAll");
-var buildOptions = require("./internal/util");
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+import buildOptions from './internal/util.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves all assignments in a course
@@ -9,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a list of Assignment objects: https://canvas.instructure.com/doc/api/assignments.html#Assignment
  */
 
-function getAssignments(courseId, ...options) {
-  return fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options));
+export default function getAssignments (courseId, ...options) {
+  return fetchAll(canvasDomain + `/courses/${courseId}/assignments?` + buildOptions(options))
 }
-module.exports = getAssignments;

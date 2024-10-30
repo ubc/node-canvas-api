@@ -1,6 +1,6 @@
-var postRequest = require("./internal/post");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import postRequest from './internal/post.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Creates group membership (add user to group)
@@ -10,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A Group Membership object: https://canvas.instructure.com/doc/api/groups.html#GroupMembership
  */
 
-function createGroupMembership(groupId, body) {
-  return postRequest(canvasDomain + `/groups/${groupId}/memberships`, body);
+export default function createGroupMembership (groupId, body) {
+  return postRequest(canvasDomain + `/groups/${groupId}/memberships`, body)
 }
-module.exports = createGroupMembership;

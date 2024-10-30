@@ -1,6 +1,6 @@
-var fetchAll = require("./internal/fetchAll");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves progress of asynchronous operation.
@@ -8,7 +8,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a Progress object: https://canvas.instructure.com/doc/api/progress.html
  */
 
-function getProgress(id) {
-  return fetchAll(canvasDomain + `/progress/${id}`);
+export default function getProgress (id) {
+  return fetchAll(canvasDomain + `/progress/${id}`)
 }
-module.exports = getProgress;

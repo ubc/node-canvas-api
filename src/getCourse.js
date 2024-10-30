@@ -1,7 +1,7 @@
-var fetch = require("./internal/fetch");
-var buildOptions = require("./internal/util");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetch from './internal/fetch.js'
+import buildOptions from './internal/util.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves course info
@@ -10,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a Course object: https://canvas.instructure.com/doc/api/courses.html#Course
 */
 
-function getCourse(courseId, ...options) {
-  return fetch(canvasDomain + `/courses/${courseId}?` + buildOptions(options));
+export default function getCourse (courseId, ...options) {
+  return fetch(canvasDomain + `/courses/${courseId}?` + buildOptions(options))
 }
-module.exports = getCourse;

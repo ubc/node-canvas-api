@@ -1,5 +1,6 @@
-var fetchAll = require("./internal/fetchAll");
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrives all discussion topics in group
@@ -8,6 +9,7 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  */
 
 const getGroupDiscussionTopics = async groupId => {
-  return fetchAll(canvasDomain + `/groups/${groupId}/discussion_topics`);
-};
-module.exports = getGroupDiscussionTopics;
+  return fetchAll(canvasDomain + `/groups/${groupId}/discussion_topics`)
+}
+
+export default getGroupDiscussionTopics

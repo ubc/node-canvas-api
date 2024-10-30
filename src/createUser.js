@@ -1,6 +1,6 @@
-var postRequest = require("./internal/post");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import postRequest from './internal/post.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Creates group
@@ -10,7 +10,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A User object: https://canvas.instructure.com/doc/api/users.html#User
  */
 
-function createUser(accountId, body) {
-  return postRequest(canvasDomain + `/accounts/${accountId}/users`, body);
+export default function createUser (accountId, body) {
+  return postRequest(canvasDomain + `/accounts/${accountId}/users`, body)
 }
-module.exports = createUser;

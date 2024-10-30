@@ -1,6 +1,6 @@
-var fetchAll = require("./internal/fetchAll");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetchAll from './internal/fetchAll.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves activity analytics for specified account.
@@ -8,7 +8,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a list of Activity objects
  */
 
-function getAnalytics(accountId) {
-  return fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`);
+export default function getAnalytics (accountId) {
+  return fetchAll(canvasDomain + `/accounts/${accountId}/analytics/current/activity`)
 }
-module.exports = getAnalytics;

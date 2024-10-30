@@ -1,13 +1,16 @@
-var buildOptions = require("./internal/util");
-var request = require("request-promise");
-var linkparser = require("parse-link-header");
-var Bottleneck = require("bottleneck");
-require('dotenv').config();
-const token = process.env.CANVAS_API_TOKEN;
+import buildOptions from './internal/util.js'
+
+import request from 'request-promise'
+import linkparser from 'parse-link-header'
+import Bottleneck from 'bottleneck'
+
+const token = process.env.CANVAS_API_TOKEN
+
 const limiter = new Bottleneck({
   maxConcurrent: 20,
   minTime: 100
-});
+})
+
 const requestObj = url => ({
   'method': 'GET',
   'uri': url,
@@ -16,14 +19,19 @@ const requestObj = url => ({
   'headers': {
     'Authorization': 'Bearer ' + token
   }
-});
-const fetchAll = (url, result = []) => request(requestObj(url)).then(response => {
-  result = [...result, response.body];
-  const links = linkparser(response.headers.link);
-  return links.next ? fetchAll(links.next.url, result) : result;
-}).catch(err => console.log(err));
-const fetchAllRateLimited = limiter.wrap(fetchAll);
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+})
+
+const fetchAll = (url, result = []) =>
+  request(requestObj(url))
+    .then(response => {
+      result = [...result, response.body]
+      const links = linkparser(response.headers.link)
+      return links.next ? fetchAll(links.next.url, result) : result
+    }).catch(err => console.log(err))
+
+const fetchAllRateLimited = limiter.wrap(fetchAll)
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrieves all quiz submission events in a course
@@ -34,7 +42,6 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a list of Quiz submission event objects: https://canvas.instructure.com/doc/api/submissions.html
  */
 
-function getQuizSubmissionEvents(courseId, quizId, submissionId, ...options) {
-  return fetchAllRateLimited(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}/events?` + buildOptions(options));
+export default function getQuizSubmissionEvents (courseId, quizId, submissionId, ...options) {
+  return fetchAllRateLimited(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}/events?` + buildOptions(options))
 }
-module.exports = getQuizSubmissionEvents;

@@ -1,5 +1,6 @@
-var fetch = require("./internal/fetch");
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import fetch from './internal/fetch.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Retrives a single submission
@@ -9,6 +10,7 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  */
 
 const getQuizSubmission = async (courseId, quizId, submissionId) => {
-  return fetch(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}`);
-};
-module.exports = getQuizSubmission;
+  return fetch(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}`)
+}
+
+export default getQuizSubmission

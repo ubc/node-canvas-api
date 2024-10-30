@@ -1,6 +1,6 @@
-var putRequest = require("./internal/put");
-require('dotenv').config();
-const canvasDomain = process.env.CANVAS_API_DOMAIN;
+import putRequest from './internal/put.js'
+
+const canvasDomain = process.env.CANVAS_API_DOMAIN
 
 /**
  * Show custom gradebook column that was hidden
@@ -9,9 +9,8 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN;
  * @return {Promise} A promise that resolves to a CustomColumn object: https://canvas.instructure.com/doc/api/custom_gradebook_columns.html#CustomColumn
  */
 
-function showCustomGradebookColumn(courseId, columnId) {
+export default function showCustomGradebookColumn (courseId, columnId) {
   return putRequest(canvasDomain + `/courses/${courseId}/custom_gradebook_columns/${columnId}`, {
     'column[hidden]': false
-  });
+  })
 }
-module.exports = showCustomGradebookColumn;

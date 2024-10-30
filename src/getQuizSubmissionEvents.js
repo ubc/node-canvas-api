@@ -1,35 +1,6 @@
 import buildOptions from './internal/util.js'
 
-import request from 'request-promise'
-import linkparser from 'parse-link-header'
-import Bottleneck from 'bottleneck'
-
-const token = process.env.CANVAS_API_TOKEN
-
-const limiter = new Bottleneck({
-  maxConcurrent: 20,
-  minTime: 100
-})
-
-const requestObj = url => ({
-  'method': 'GET',
-  'uri': url,
-  'json': true,
-  'resolveWithFullResponse': true,
-  'headers': {
-    'Authorization': 'Bearer ' + token
-  }
-})
-
-const fetchAll = (url, result = []) =>
-  request(requestObj(url))
-    .then(response => {
-      result = [...result, response.body]
-      const links = linkparser(response.headers.link)
-      return links.next ? fetchAll(links.next.url, result) : result
-    }).catch(err => console.log(err))
-
-const fetchAllRateLimited = limiter.wrap(fetchAll)
+import fetchAll from './internal/fetchAll.js'
 
 const canvasDomain = process.env.CANVAS_API_DOMAIN
 
@@ -43,5 +14,5 @@ const canvasDomain = process.env.CANVAS_API_DOMAIN
  */
 
 export default function getQuizSubmissionEvents (courseId, quizId, submissionId, ...options) {
-  return fetchAllRateLimited(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}/events?` + buildOptions(options))
+  return fetchAll(canvasDomain + `/courses/${courseId}/quizzes/${quizId}/submissions/${submissionId}/events?` + buildOptions(options))
 }
